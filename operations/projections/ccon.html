@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Equal Area Cylindrical" href="cea.html"/>
-        <link rel="prev" title="Central Cylindrical" href="cc.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Equal Area Cylindrical" href="cea.html" />
+    <link rel="prev" title="Central Cylindrical" href="cc.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -104,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="aeqd.html">Azimuthal Equidistant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -116,6 +107,9 @@
 <li class="toctree-l3"><a class="reference internal" href="cc.html">Central Cylindrical</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Central Conic</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mathematical-definition">Mathematical definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference-values">Reference values</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cea.html">Equal Area Cylindrical</a></li>
@@ -194,12 +188,12 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qsc.html">Quadrilateralized Spherical Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robin.html">Robinson</a></li>
@@ -263,7 +257,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -271,9 +265,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -319,8 +314,11 @@
             
   <div class="section" id="central-conic">
 <span id="ccon"></span><h1>Central Conic<a class="headerlink" href="#central-conic" title="Permalink to this headline">¶</a></h1>
-<p>This is central (centrographic) projection on cone tangent at <code class="docutils literal"><span class="pre">lat_0</span></code> latitude,
-identical with <code class="docutils literal"><span class="pre">conic()</span></code> projection from <code class="docutils literal"><span class="pre">mapproj</span></code> R package.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p>This is central (centrographic) projection on cone tangent at :option:<code class="docutils literal notranslate"><span class="pre">lat_1</span></code>
+latitude, identical with <code class="docutils literal notranslate"><span class="pre">conic()</span></code> projection from <code class="docutils literal notranslate"><span class="pre">mapproj</span></code> R package.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
@@ -336,13 +334,17 @@ identical with <code class="docutils literal"><span class="pre">conic()</span></
 <tr class="row-odd"><td><strong>Defined area</strong></td>
 <td>Global, but best used near the standard parallel</td>
 </tr>
-<tr class="row-even"><td><strong>Implemented by</strong></td>
-<td>Lukasz Komsta</td>
+<tr class="row-even"><td><strong>Alias</strong></td>
+<td>ccon</td>
 </tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-even"><td><cite>+lat_1</cite></td>
-<td>Latitude of standard parallel.</td>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
+</tr>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
@@ -359,32 +361,79 @@ originally handwritten on paper maps and further copied by hand. The projection
 fit to existing maps during first software development in DOS era. Many years later
 it is still de facto standard grid in Polish geobotanical research.</p>
 <p>The ATPOL coordinates can be achieved with with the following parameters:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=ccon +lat_1=52 +lat_0=52 +lon_0=19 +axis=esu +a=6390000 +x_0=330000 +y_0=-350000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=ccon +lat_1=52 +lon_0=19 +axis=esu +a=6390000 +x_0=330000 +y_0=-350000
 </pre></div>
 </div>
 <p>For more information see <a class="reference internal" href="../../references.html#komsta2016" id="id2">[Komsta2016]</a> and <a class="reference internal" href="../../references.html#verey2017" id="id3">[Verey2017]</a>.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="required">
+<h3>Required<a class="headerlink" href="#required" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-arg-lat-1">
+<code class="descname">+lat_1</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard parallel of projection.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="optional">
+<h3>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-r">
+<code class="descname">+R</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the sphere given in meters. If used in conjunction with <code class="docutils literal notranslate"><span class="pre">+ellps</span></code>
+<code class="docutils literal notranslate"><span class="pre">+R</span></code> takes precedence.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="mathematical-definition">
+<h2>Mathematical definition<a class="headerlink" href="#mathematical-definition" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="forward-projection">
 <h3>Forward projection<a class="headerlink" href="#forward-projection" title="Permalink to this headline">¶</a></h3>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[r = \cot \phi_0 - \tan (\phi - \phi_0)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x = r \sin (\lambda\sin\phi_0)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = \cot \phi_0 - r \cos (\lambda\sin\phi_0)\]</div>
 </div>
 <div class="section" id="inverse-projection">
 <h3>Inverse projection<a class="headerlink" href="#inverse-projection" title="Permalink to this headline">¶</a></h3>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = \cot \phi_0 - y\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi = \phi_0 - \tan^{-1} ( \sqrt{x^2+y^2} - \cot \phi_0 )\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\lambda = \frac{\tan^{-1} \sqrt{x^2+y^2}}{\sin \phi_0}\]</div>
 </div>
+</div>
 <div class="section" id="reference-values">
-<h3>Reference values<a class="headerlink" href="#reference-values" title="Permalink to this headline">¶</a></h3>
+<h2>Reference values<a class="headerlink" href="#reference-values" title="Permalink to this headline">¶</a></h2>
 <p>For ATPOL to WGS84 test, run the following script:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>#!/bin/bash
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 cat &lt;&lt; EOF | src/cs2cs -v -f &quot;%E&quot; +proj=ccon +lat_1=52 +lat_0=52 +lon_0=19 +axis=esu +a=6390000 +x_0=330000 +y_0=-350000 +to +proj=longlat +datum=WGS84 +no_defs
 0 0
 0 700000
@@ -395,7 +444,7 @@ EOF
 </pre></div>
 </div>
 <p>It should result with</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>1.384023E+01 5.503040E+01 0.000000E+00
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.384023E+01 5.503040E+01 0.000000E+00
 1.451445E+01 4.877385E+01 0.000000E+00
 2.478271E+01 5.500352E+01 0.000000E+00
 2.402761E+01 4.875048E+01 0.000000E+00
@@ -403,7 +452,7 @@ EOF
 </pre></div>
 </div>
 <p>Analogous script can be run for reverse test:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>cat &lt;&lt; EOF  | src/cs2cs -v -f &quot;%E&quot; +proj=longlat +datum=WGS84 +no_defs +to +proj=ccon +lat_1=52 +lat_0=52 +lon_0=19 +axis=esu +a=6390000 +x_0=330000 +y_0=-350000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat &lt;&lt; EOF  | src/cs2cs -v -f &quot;%E&quot; +proj=longlat +datum=WGS84 +no_defs +to +proj=ccon +lat_1=52 +lat_0=52 +lon_0=19 +axis=esu +a=6390000 +x_0=330000 +y_0=-350000
 24 55
 15 49
 24 49
@@ -412,7 +461,7 @@ EOF
 </pre></div>
 </div>
 <p>and it should give the following results:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>6.500315E+05 4.106162E+03 0.000000E+00
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6.500315E+05 4.106162E+03 0.000000E+00
 3.707419E+04 6.768262E+05 0.000000E+00
 6.960534E+05 6.722946E+05 0.000000E+00
 3.300000E+05 3.500000E+05 0.000000E+00
@@ -420,13 +469,10 @@ EOF
 </div>
 </div>
 </div>
-</div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -445,11 +491,11 @@ EOF
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -468,6 +514,7 @@ EOF
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -477,7 +524,7 @@ EOF
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -486,14 +533,13 @@ EOF
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

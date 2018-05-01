@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Central Cylindrical" href="cc.html"/>
-        <link rel="prev" title="Cal Coop Ocean Fish Invest Lines/Stations" href="calcofi.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Central Cylindrical" href="cc.html" />
+    <link rel="prev" title="Cal Coop Ocean Fish Invest Lines/Stations" href="calcofi.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -104,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="aeqd.html">Azimuthal Equidistant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -114,6 +105,7 @@
 <li class="toctree-l3"><a class="reference internal" href="calcofi.html">Cal Coop Ocean Fish Invest Lines/Stations</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Cassini (Cassini-Soldner)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mathematical-definition">Mathematical definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#further-reading">Further reading</a></li>
 </ul>
@@ -196,12 +188,12 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qsc.html">Quadrilateralized Spherical Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robin.html">Robinson</a></li>
@@ -265,7 +257,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -273,9 +265,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -337,13 +330,17 @@
 <tr class="row-odd"><td><strong>Defined area</strong></td>
 <td>Global, but best used near the central meridian with long, narrow areas</td>
 </tr>
-<tr class="row-even"><td><strong>Implemented by</strong></td>
-<td>Gerald I. Evenden</td>
+<tr class="row-even"><td><strong>Alias</strong></td>
+<td>cass</td>
 </tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-even"><td><cite>+lat_0</cite></td>
-<td>Latitude of origin (Default to 0)</td>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
+</tr>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
@@ -353,35 +350,84 @@
 <p>There has been little usage of the spherical version of the Cassini, but the ellipsoidal Cassini-Soldner version was adopted by the Ordnance Survey for the official survey of Great Britain during the second half of the 19th century <a class="reference internal" href="../../references.html#steers1970" id="id1">[Steers1970]</a>.
 Many of these maps were prepared at a scale of 1:2,500.
 The Cassini-Soldner was also used for the detailed mapping of many German states during the same period.</p>
-<p>Example using EPSG 30200 (Trinidad 1903, units in clarke&#8217;s links):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 0.17453293 -1.08210414 | proj +proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46392051999 +y_0=65379.0134283 +a=6378293.645208759 +b=6356617.987679838 +to_meter=0.201166195164 +no_defs
+<p>Example using EPSG 30200 (Trinidad 1903, units in clarke’s links):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 0.17453293 -1.08210414 | proj +proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46392051999 +y_0=65379.0134283 +a=6378293.645208759 +b=6356617.987679838 +to_meter=0.201166195164 +no_defs
 66644.94    82536.22
 </pre></div>
 </div>
 <p>Example using EPSG 3068 (Soldner Berlin):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 13.5 52.4 | proj +proj=cass +lat_0=52.41864827777778 +lon_0=13.62720366666667 +x_0=40000 +y_0=10000 +ellps=bessel +datum=potsdam +units=m +no_defs
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 13.5 52.4 | proj +proj=cass +lat_0=52.41864827777778 +lon_0=13.62720366666667 +x_0=40000 +y_0=10000 +ellps=bessel +datum=potsdam +units=m +no_defs
 31343.05    7932.76
 </pre></div>
 </div>
 </div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All options are optional for the Cassini projection.</p>
+</div>
+<dl class="option">
+<dt id="cmdoption-arg-lat-0">
+<code class="descname">+lat_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-r">
+<code class="descname">+R</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the sphere given in meters. If used in conjunction with <code class="docutils literal notranslate"><span class="pre">+ellps</span></code>
+<code class="docutils literal notranslate"><span class="pre">+R</span></code> takes precedence.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="mathematical-definition">
 <h2>Mathematical definition<a class="headerlink" href="#mathematical-definition" title="Permalink to this headline">¶</a></h2>
-<p>The formulas describing the Cassini projection are taken from Snyder&#8217;s <a class="reference internal" href="../../references.html#snyder1987" id="id2">[Snyder1987]</a>.</p>
-<p><span class="math">\(\phi_0\)</span> is the latitude of origin that match the center of the map (default to 0). It can be set with <code class="docutils literal"><span class="pre">+lat_0</span></code>.</p>
+<p>The formulas describing the Cassini projection are taken from Snyder’s <a class="reference internal" href="../../references.html#snyder1987" id="id2">[Snyder1987]</a>.</p>
+<p><span class="math notranslate nohighlight">\(\phi_0\)</span> is the latitude of origin that match the center of the map (default to 0). It can be set with <code class="docutils literal notranslate"><span class="pre">+lat_0</span></code>.</p>
 <div class="section" id="spherical-form">
 <h3>Spherical form<a class="headerlink" href="#spherical-form" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="forward-projection">
 <h4>Forward projection<a class="headerlink" href="#forward-projection" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x = \arcsin(\cos(\phi)  \sin(\lambda))\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = \arctan2(\tan(\phi), \cos(\lambda)) - \phi_0\]</div>
 </div>
 <div class="section" id="inverse-projection">
 <h4>Inverse projection<a class="headerlink" href="#inverse-projection" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi = \arcsin(\sin(y+\phi_0) \cos(x))\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\lambda = \arctan2(\tan(x), \cos(y+\phi_0))\]</div>
 </div>
 </div>
@@ -389,33 +435,33 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
 <h3>Elliptical form<a class="headerlink" href="#elliptical-form" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id3">
 <h4>Forward projection<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[N = (1 - e^2 \sin^2(\phi))^{-1/2}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[T = \tan^2(\phi)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[A = \lambda \cos(\phi)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[C = \frac{e^2}{1-e^2} cos^2(\phi)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x = N ( A - T \frac{A^3}{6} - (8-T+8C)T\frac{A^5}{120})\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = M(\phi) - M(\phi_0) + N \tan(\phi)(\frac{A^2}{2} + (5-T+6C)\frac{A^4}{24})\]</div>
 <p>and M() is the meridional distance function.</p>
 </div>
 <div class="section" id="id4">
 <h4>Inverse projection<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi' = M^{-1}(M(\phi_0)+y)\]</div>
-<p>if <span class="math">\(\phi' = \frac{\pi}{2}\)</span> then <span class="math">\(\phi=\phi'\)</span> and <span class="math">\(\lambda=0\)</span></p>
-<p>otherwise evaluate T and N above using <span class="math">\(\phi'\)</span> and</p>
-<div class="math">
+<p>if <span class="math notranslate nohighlight">\(\phi' = \frac{\pi}{2}\)</span> then <span class="math notranslate nohighlight">\(\phi=\phi'\)</span> and <span class="math notranslate nohighlight">\(\lambda=0\)</span></p>
+<p>otherwise evaluate T and N above using <span class="math notranslate nohighlight">\(\phi'\)</span> and</p>
+<div class="math notranslate nohighlight">
 \[R = (1 - e^2)(1 - e^2 sin^2 \phi')^{-3/2}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[D = x/N\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi = \phi' - \tan \phi' \frac{N}{R}(\frac{D^2}{2}-(1+3T)\frac{D^4}{24})\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\lambda = \frac{(D - T\frac{D^3}{3} + (1+3T)T\frac{D^5}{15})}{\cos \phi'}\]</div>
 </div>
 </div>
@@ -432,9 +478,7 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -453,11 +497,11 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -476,6 +520,7 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -485,7 +530,7 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -494,14 +539,13 @@ The Cassini-Soldner was also used for the detailed mapping of many German states
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

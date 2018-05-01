@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Development" href="index.html"/>
-        <link rel="next" title="Language bindings" href="bindings.html"/>
-        <link rel="prev" title="Deprecated API" href="reference/deprecated.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Language bindings" href="bindings.html" />
+    <link rel="prev" title="Deprecated API" href="reference/deprecated.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -129,7 +120,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -137,9 +128,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -184,32 +176,30 @@
   <div class="section" id="using-proj-in-cmake-projects">
 <span id="cmake"></span><h1>Using PROJ in CMake projects<a class="headerlink" href="#using-proj-in-cmake-projects" title="Permalink to this headline">¶</a></h1>
 <p>The recommended way to use the PROJ library in a CMake project is to
-link to the imported library target <code class="docutils literal"><span class="pre">${PROJ4_LIBRARIES}</span></code> provided by
+link to the imported library target <code class="docutils literal notranslate"><span class="pre">${PROJ4_LIBRARIES}</span></code> provided by
 the CMake configuration which comes with the library. Typical usage is:</p>
-<div class="code highlight-none"><div class="highlight"><pre><span></span>find_package(PROJ4)
+<div class="code highlight-none notranslate"><div class="highlight"><pre><span></span>find_package(PROJ4)
 
 target_link_libraries(MyApp ${PROJ4_LIBRARIES})
 </pre></div>
 </div>
-<p>By adding the imported library target <code class="docutils literal"><span class="pre">${PROJ4_LIBRARIES}</span></code> to the
+<p>By adding the imported library target <code class="docutils literal notranslate"><span class="pre">${PROJ4_LIBRARIES}</span></code> to the
 target link libraries, CMake will also pass the include directories to
 the compiler.  This requires that you use CMake version 2.8.11 or later.
 If you are using an older version of CMake, then add</p>
-<div class="code highlight-none"><div class="highlight"><pre><span></span>include_directories(${PROJ4_INCLUDE_DIRS})
+<div class="code highlight-none notranslate"><div class="highlight"><pre><span></span>include_directories(${PROJ4_INCLUDE_DIRS})
 </pre></div>
 </div>
-<p>The CMake command <code class="docutils literal"><span class="pre">find_package</span></code> will look for the configuration in a
+<p>The CMake command <code class="docutils literal notranslate"><span class="pre">find_package</span></code> will look for the configuration in a
 number of places. The lookup can be adjusted for all packages by setting
-the cache variable or environment variable <code class="docutils literal"><span class="pre">CMAKE_PREFIX_PATH</span></code>. In
+the cache variable or environment variable <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>. In
 particular, CMake will consult (and set) the cache variable
-<code class="docutils literal"><span class="pre">PROJ4_DIR</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">PROJ4_DIR</span></code>.</p>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -228,11 +218,11 @@ particular, CMake will consult (and set) the cache variable
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -251,6 +241,7 @@ particular, CMake will consult (and set) the cache variable
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -260,7 +251,7 @@ particular, CMake will consult (and set) the cache variable
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -269,14 +260,13 @@ particular, CMake will consult (and set) the cache variable
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Conversions" href="index.html"/>
-        <link rel="next" title="Transformations" href="../transformations/index.html"/>
-        <link rel="prev" title="Lat/long (Geodetic alias)" href="latlon.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Transformations" href="../transformations/index.html" />
+    <link rel="prev" title="Lat/long (Geodetic alias)" href="latlon.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -103,9 +94,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Conversions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="axisswap.html">Axis swap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cart.html">Cartesian to geodetic conversion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lonlat.html">Lat/long (Geodetic)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="latlon.html">Lat/long (Geodetic alias)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Unit conversion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#distance-units">Distance units</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#time-units">Time units</a></li>
 </ul>
@@ -135,7 +126,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -143,9 +134,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -191,32 +183,28 @@
             
   <div class="section" id="unit-conversion">
 <span id="unitconvert"></span><h1>Unit conversion<a class="headerlink" href="#unit-conversion" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
 <p>Convert between various distance and time units.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col width="27%" />
+<col width="73%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Alias</strong></td>
+<td>unitconvert</td>
 </tr>
-<tr class="row-even"><td><cite>+xy_in</cite></td>
-<td>Input unit of the horizontal components.</td>
+<tr class="row-even"><td rowspan="2"><strong>Domain</strong></td>
+<td rowspan="2">2D, 3D or 4D</td>
 </tr>
-<tr class="row-odd"><td><cite>+xy_out</cite></td>
-<td>Output unit of the horizontal components.</td>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Any</td>
 </tr>
-<tr class="row-even"><td><cite>+z_in</cite></td>
-<td>Input unit of the vertical component.</td>
-</tr>
-<tr class="row-odd"><td><cite>+z_out</cite></td>
-<td>Output unit of the vertical component.</td>
-</tr>
-<tr class="row-even"><td><cite>+t_in</cite></td>
-<td>Input unit of the time component.</td>
-</tr>
-<tr class="row-odd"><td><cite>+t_out</cite></td>
-<td>Output unit of the time component.</td>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Any</td>
 </tr>
 </tbody>
 </table>
@@ -226,7 +214,7 @@ has to be translated to different units. The <cite>unitconvert</cite> operation 
 of that.</p>
 <p>Many North American systems are defined with coordinates in feet. For example
 in Vermont:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=pipeline
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=pipeline
 +step +proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964286 +x_0=500000.00001016 +y_0=0
 +step +proj=unitconvert +xy_in=m +xy_out=us-ft
 </pre></div>
@@ -234,24 +222,67 @@ in Vermont:</p>
 <p>Often when working with GNSS data the timestamps are presented in GPS-weeks,
 but when the data transformed with the <cite>helmert</cite> operation timestamps are
 expected to be in units of decimalyears. This can be fixed with <cite>unitconvert</cite>:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=pipeline
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=pipeline
 +step +proj=unitconvert +t_in=gpsweek +t_out=decimalyear
 +step +proj=helmert +epoch=2000.0 +t_obs=2017.5 ...
 </pre></div>
 </div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-arg-xy-in">
+<code class="descname">+xy_in</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-xy-in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal input units. See <a class="reference internal" href="#distance-units"><span class="std std-ref">Distance units</span></a> for a list of available
+units.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-xy-out">
+<code class="descname">+xy_out</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-xy-out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal output units. See <a class="reference internal" href="#distance-units"><span class="std std-ref">Distance units</span></a> for a list of available
+units.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-z-in">
+<code class="descname">+z_in</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-z-in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical output units. See <a class="reference internal" href="#distance-units"><span class="std std-ref">Distance units</span></a> for a list of available
+units.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-z-out">
+<code class="descname">+z_out</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-z-out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical output units. See <a class="reference internal" href="#distance-units"><span class="std std-ref">Distance units</span></a> for a list of available
+units.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-t-in">
+<code class="descname">+t_in</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-t-in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporal input units. See <a class="reference internal" href="#time-units"><span class="std std-ref">Time units</span></a> for a list of available units.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-t-out">
+<code class="descname">+t_out</code><code class="descclassname">=&lt;unit&gt;</code><a class="headerlink" href="#cmdoption-arg-t-out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporal output units. See <a class="reference internal" href="#time-units"><span class="std std-ref">Time units</span></a> for a list of available units.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="distance-units">
-<h2>Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h2>
 <p>In the table below all distance units supported by PROJ is listed.
-The same list can also be produced on the command line with <cite>proj</cite> or <cite>cs2cs</cite>,
-by adding the <cite>-lu</cite> flag when calling the utility.</p>
+The same list can also be produced on the command line with <strong class="program">proj</strong> or
+<strong class="program">cs2cs</strong>, by adding the <cite>-lu</cite> flag when calling the utility.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="23%" />
 <col width="77%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Label</td>
-<td>Name</td>
+<tr class="row-odd"><td><strong>Label</strong></td>
+<td><strong>Name</strong></td>
 </tr>
 <tr class="row-even"><td>km</td>
 <td>Kilometer</td>
@@ -293,19 +324,19 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
 <td>International Link</td>
 </tr>
 <tr class="row-odd"><td>us-in</td>
-<td>U.S. Surveyor&#8217;s Inch</td>
+<td>U.S. Surveyor’s Inch</td>
 </tr>
 <tr class="row-even"><td>us-ft</td>
-<td>U.S. Surveyor&#8217;s Foot</td>
+<td>U.S. Surveyor’s Foot</td>
 </tr>
 <tr class="row-odd"><td>us-yd</td>
-<td>U.S. Surveyor&#8217;s Yard</td>
+<td>U.S. Surveyor’s Yard</td>
 </tr>
 <tr class="row-even"><td>us-ch</td>
-<td>U.S. Surveyor&#8217;s Chain</td>
+<td>U.S. Surveyor’s Chain</td>
 </tr>
 <tr class="row-odd"><td>us-mi</td>
-<td>U.S. Surveyor&#8217;s Statute Mile</td>
+<td>U.S. Surveyor’s Statute Mile</td>
 </tr>
 <tr class="row-even"><td>ind-yd</td>
 <td>Indian Yard</td>
@@ -320,7 +351,7 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
 </table>
 </div>
 <div class="section" id="time-units">
-<h2>Time units<a class="headerlink" href="#time-units" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Time units<a class="headerlink" href="#time-units" title="Permalink to this headline">¶</a></h2>
 <p>In the table below all time units supported by PROJ is listed.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -328,16 +359,19 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
 <col width="67%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>mjd</td>
+<tr class="row-odd"><td><strong>label</strong></td>
+<td><strong>Name</strong></td>
+</tr>
+<tr class="row-even"><td>mjd</td>
 <td>Modified Julian date</td>
 </tr>
-<tr class="row-even"><td>decimalyear</td>
+<tr class="row-odd"><td>decimalyear</td>
 <td>Decimal year</td>
 </tr>
-<tr class="row-odd"><td>gps_week</td>
+<tr class="row-even"><td>gps_week</td>
 <td>GPS Week</td>
 </tr>
-<tr class="row-even"><td>yyyymmdd</td>
+<tr class="row-odd"><td>yyyymmdd</td>
 <td>Date in yyyymmdd format</td>
 </tr>
 </tbody>
@@ -347,9 +381,7 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -368,11 +400,11 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -391,6 +423,7 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -400,7 +433,7 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -409,14 +442,13 @@ by adding the <cite>-lu</cite> flag when calling the utility.</p>
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

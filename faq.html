@@ -25,28 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Contributing" href="contributing.html"/>
-        <link rel="prev" title="Development rules and tools for PROJ code contributors" href="development/for_proj_contributors.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="Development rules and tools for PROJ code contributors" href="development/for_proj_contributors.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -108,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-use-epsg-coordinate-system-codes-with-proj">How do I use EPSG coordinate system codes with PROJ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-use-3-parameter-and-7-parameter-datum-shifting">How do I use 3 parameter and 7 parameter datum shifting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#does-proj-work-in-different-international-numeric-locales">Does PROJ work in different international numeric locales?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator">Changing Ellipsoid / Why can&#8217;t I convert from WGS84 to Google Earth / Virtual Globe Mercator?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator">Changing Ellipsoid / Why can’t I convert from WGS84 to Google Earth / Virtual Globe Mercator?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#why-do-i-get-different-results-with-4-5-0-and-4-6-0">Why do I get different results with 4.5.0 and 4.6.0?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-calculate-distances-directions-on-the-surface-of-the-earth">How do I calculate distances/directions on the surface of the earth?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-the-healpix-projection-and-how-can-i-use-it">What is the HEALPix projection and how can I use it?</a></li>
@@ -134,7 +126,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">PROJ.4</a>
@@ -142,9 +134,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -196,7 +189,7 @@
 <li><a class="reference internal" href="#how-do-i-use-epsg-coordinate-system-codes-with-proj" id="id6">How do I use EPSG coordinate system codes with PROJ?</a></li>
 <li><a class="reference internal" href="#how-do-i-use-3-parameter-and-7-parameter-datum-shifting" id="id7">How do I use 3 parameter and 7 parameter datum shifting</a></li>
 <li><a class="reference internal" href="#does-proj-work-in-different-international-numeric-locales" id="id8">Does PROJ work in different international numeric locales?</a></li>
-<li><a class="reference internal" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator" id="id9">Changing Ellipsoid / Why can&#8217;t I convert from WGS84 to Google Earth / Virtual Globe Mercator?</a></li>
+<li><a class="reference internal" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator" id="id9">Changing Ellipsoid / Why can’t I convert from WGS84 to Google Earth / Virtual Globe Mercator?</a></li>
 <li><a class="reference internal" href="#why-do-i-get-different-results-with-4-5-0-and-4-6-0" id="id10">Why do I get different results with 4.5.0 and 4.6.0?</a></li>
 <li><a class="reference internal" href="#how-do-i-calculate-distances-directions-on-the-surface-of-the-earth" id="id11">How do I calculate distances/directions on the surface of the earth?</a></li>
 <li><a class="reference internal" href="#what-is-the-healpix-projection-and-how-can-i-use-it" id="id12">What is the HEALPix projection and how can I use it?</a></li>
@@ -216,24 +209,24 @@
 PROJ page under documentation are the authoritative source but projections
 and options are spread over several documents in a form more related to their
 order of implementation than anything else.</p>
-<p>The &#8216;&#8217;&#8216;proj&#8217;&#8216;&#8217; command itself can report the list of projections using the
-&#8216;&#8217;&#8216;-lp&#8217;&#8216;&#8217; option, the list of ellipsoids with the &#8216;&#8217;&#8216;-le&#8217;&#8216;&#8217; option, the list of
-units with the &#8216;&#8217;&#8216;-lu&#8217;&#8216;&#8217; option, and the list of built-in datums with the
-&#8216;&#8217;&#8216;-ld&#8217;&#8216;&#8217; option.</p>
+<p>The ‘’‘proj’‘’ command itself can report the list of projections using the
+‘’‘-lp’‘’ option, the list of ellipsoids with the ‘’‘-le’‘’ option, the list of
+units with the ‘’‘-lu’‘’ option, and the list of built-in datums with the
+‘’‘-ld’‘’ option.</p>
 <p>The [<a class="reference external" href="http://www.remotesensing.org/geotiff/proj_list/">http://www.remotesensing.org/geotiff/proj_list/</a> GeoTIFF Projections Pages]
 include most of the common PROJ projections, and a definition of the
 projection specific options for each.</p>
 <ul class="simple">
 <li>How do I do datum shifts between NAD27 and NAD83?</li>
 </ul>
-<p>While the &#8216;&#8217;&#8216;nad2nad&#8217;&#8216;&#8217; program can be used in some cases, the &#8216;&#8217;&#8216;cs2cs&#8217;&#8216;&#8217; is
+<p>While the ‘’‘nad2nad’‘’ program can be used in some cases, the ‘’‘cs2cs’‘’ is
 now the preferred mechanism.   The following example demonstrates using the
 default shift parameters for NAD27 to NAD83:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>% cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83 -117 30
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83 -117 30
 </pre></div>
 </div>
 <p>producing:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>117d0&#39;2.901&quot;W   30d0&#39;0.407&quot;N 0.000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>117d0&#39;2.901&quot;W   30d0&#39;0.407&quot;N 0.000
 </pre></div>
 </div>
 <p>In order for datum shifting to work properly the various grid shift files must
@@ -246,12 +239,12 @@ be available.  See below.  More details are available in the
 set of datum shift files.  See <a class="reference internal" href="download.html#download"><span class="std std-ref">Download</span></a> for instructions how to fetch
 and install these files</p>
 <p>On Windows the extra nadshift target must be used.  For instance
-<code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">makefile.vc</span> <span class="pre">nadshift</span></code> in the <code class="docutils literal"><span class="pre">proj/src</span></code> directory.</p>
+<code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">makefile.vc</span> <span class="pre">nadshift</span></code> in the <code class="docutils literal notranslate"><span class="pre">proj/src</span></code> directory.</p>
 <p>A default build and install on Unix will normally build knowledge of the
 directory where the grid shift files are installed into the PROJ library
 (usually /usr/local/share/proj).  On Windows the library is normally built
 thinking that C:PROJNAD is the installed directory for the grid shift files.
-If the built in concept of the PROJ data directory is incorrect, the <code class="docutils literal"><span class="pre">PROJ_LIB</span></code>
+If the built in concept of the PROJ data directory is incorrect, the <code class="docutils literal notranslate"><span class="pre">PROJ_LIB</span></code>
 environment can be defined with the correct directory.</p>
 </div>
 <div class="section" id="how-do-i-debug-problems-with-nad27-nad83-datum-shifting">
@@ -262,7 +255,7 @@ installed on your system.  If not, see the previous question.</p>
 </li>
 <li><p class="first">Try a datum shifting operation in relative isolation, such as with the cs2cs
 command listed above.  Do you get reasonable results?  If not it is likely
-the grid shift files aren&#8217;t being found.  Perhaps you need to define
+the grid shift files aren’t being found.  Perhaps you need to define
 PROJ_LIB?</p>
 </li>
 <li><p class="first">The cs2cs command and the underlying pj_transform() API know how to do a
@@ -271,26 +264,26 @@ is imperative that both the source and destination coordinate system be
 defined with appropriate datum information.  That means that implicitly or
 explicitly there must be a +datum= clause, a +nadgrids= clause or a
 +towgs84= clause.  For instance
-<code class="docutils literal"><span class="pre">cs2cs</span> <span class="pre">+proj=latlong</span> <span class="pre">+datum=NAD27</span> <span class="pre">+to</span> <span class="pre">+proj=latlong</span> <span class="pre">+ellps=WGS84</span></code> won&#8217;t work because defining the output
-coordinate system as using the ellipse WGS84 isn&#8217;t the same as defining it
+<code class="docutils literal notranslate"><span class="pre">cs2cs</span> <span class="pre">+proj=latlong</span> <span class="pre">+datum=NAD27</span> <span class="pre">+to</span> <span class="pre">+proj=latlong</span> <span class="pre">+ellps=WGS84</span></code> won’t work because defining the output
+coordinate system as using the ellipse WGS84 isn’t the same as defining it
 to use the datum WGS84 (use +datum=WGS84).  If either the input or output
 are not identified as having a datum, the datum shifting (and ellipsoid
 change) step is just quietly skipped!</p>
 </li>
-<li><p class="first">The <code class="docutils literal"><span class="pre">PROJ_DEBUG</span></code> environment can be defined (any value) to force extra output
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">PROJ_DEBUG</span></code> environment can be defined (any value) to force extra output
 from the PROJ library to stderr (the text console normally) with
 information on what data files are being opened and in some cases why a
 transformation fails.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>export PROJ_DEBUG=ON
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PROJ_DEBUG=ON
 cs2cs ...
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">PROJ_DEBUG</span></code> support is not yet very mature in the PROJ library.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">PROJ_DEBUG</span></code> support is not yet very mature in the PROJ library.</p>
 </div>
 </li>
-<li><p class="first">The <code class="docutils literal"><span class="pre">-v</span></code> flag to cs2cs can be useful in establishing more detail on what
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag to cs2cs can be useful in establishing more detail on what
 parameters being used internally for a coordinate system.  This will include
 expanding the definition of +datum clause.</p>
 </li>
@@ -303,7 +296,7 @@ coordinate system codes and PROJ descriptions of the coordinate system
 available in the epsg definition file that normally lives in the proj/nad
 directory.  If installed (it is installed by default on Unix), it is possible
 to use EPSG numbers like this:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>% cs2cs -v +init=epsg:26711
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% cs2cs -v +init=epsg:26711
 # ---- From Coordinate System ----
 #Universal Transverse Mercator (UTM)
 #       Cyl, Sph
@@ -338,28 +331,28 @@ altering the role of commas and periods in numbers, then PROJ will not work.
 This problem is common in some European locales.</p>
 <p>On unix-like platforms, this problem can be avoided by forcing the use of the
 default numeric locale by setting the LC_NUMERIC environment variable to C.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ export LC_NUMERIC=C
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ export LC_NUMERIC=C
 $ proj ...
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">NOTE: Per ticket #49, in PROJ 4.7.0 and later pj_init() operates with locale
-overridden to &#8220;C&#8221; to avoid most locale specific processing for applications
+overridden to “C” to avoid most locale specific processing for applications
 using the API.  Command line tools may still have issues.</p>
 </div>
 </div>
 <div class="section" id="changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator">
-<h2>Changing Ellipsoid / Why can&#8217;t I convert from WGS84 to Google Earth / Virtual Globe Mercator?<a class="headerlink" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator" title="Permalink to this headline">¶</a></h2>
+<h2>Changing Ellipsoid / Why can’t I convert from WGS84 to Google Earth / Virtual Globe Mercator?<a class="headerlink" href="#changing-ellipsoid-why-can-t-i-convert-from-wgs84-to-google-earth-virtual-globe-mercator" title="Permalink to this headline">¶</a></h2>
 <p>The coordinate system definition for Google Earth, and Virtual Globe Mercator
 is as follows, which uses a sphere as the earth model for the Mercator
 projection.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0
      +x_0=0.0 +y_0=0 +k=1.0 +units=m +no_defs
 </pre></div>
 </div>
 <p>But, if you do something like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84
     +to +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0
                    +x_0=0.0 +y_0=0 +k=1.0 +units=m +no_defs
 </pre></div>
@@ -371,11 +364,11 @@ the WGS84 datum which has a quite differently shaped ellipsoid.</p>
 <p>In this case, and many other cases using spherical projections, the desired
 approach is to actually treat the lat/long locations on the sphere as if they
 were on WGS84 without any adjustments when using them for converting to other
-coordinate systems.  The solution is to &#8220;trick&#8221; PROJ into applying no change
+coordinate systems.  The solution is to “trick” PROJ into applying no change
 to the lat/long values when going to (and through) WGS84.  This can be
 accomplished by asking PROJ to use a null grid shift file for switching from
 your spherical lat/long coordinates to WGS84.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84 \
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84 \
     +to +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 \
     +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
 </pre></div>
@@ -389,7 +382,7 @@ EPSG:3785 and EPSG:900913.  When using this coordinate system with GDAL/OGR it
 is helpful to include the +wktext so the exact PROJ string will be preserved
 in the WKT representation (otherwise key parameters like <cite>+nadgrids=&#64;null</cite> will
 be dropped):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0
            +units=m +nadgrids=@null +wktext  +no_defs
 </pre></div>
 </div>
@@ -428,13 +421,13 @@ horizontal parallels.  HEALPix provides a mapping in which points of equal
 latitude and equally spaced longitude are mapped to points of equal latitude
 and equally spaced longitude with the module of the polar interruptions. ||</p>
 <p>To run a forward HEALPix projection on a unit sphere model, use the following command:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>proj +proj=healpix +lon_0=0 +a=1 -E &lt;&lt;EOF
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>proj +proj=healpix +lon_0=0 +a=1 -E &lt;&lt;EOF
 0 0
 EOF
 </pre></div>
 </div>
 <p>Output of the above command.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>0 0 0.00 0.00
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 0 0.00 0.00
 </pre></div>
 </div>
 </div>
@@ -445,52 +438,50 @@ EOF
 </div>
 <p>rHEALPix is a projection based on the HEALPix projection.  The implementation
 of rHEALPix uses the HEALPix projection.  The rHEALPix combines the peaks of
-the HEALPix into a square.  The square&#8217;s position can be translated and rotated
+the HEALPix into a square.  The square’s position can be translated and rotated
 across the x-axis which is a novel approach for the rHEALPix projection.  The
 initial intention of using rHEALPix in the Spatial Computation Engine Science
 Collaboration Environment (SCENZGrid).</p>
 <p>To run a inverse rHEALPix projection on a WGS84 ellipsoidal model, use the following command:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>proj +proj=rhealpix -f &#39;%.2f&#39; -I +lon_0=0 +a=1 +ellps=WGS84 +npole=0 +spole=0 -E &lt;&lt;EOF
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>proj +proj=rhealpix -f &#39;%.2f&#39; -I +lon_0=0 +a=1 +ellps=WGS84 +npole=0 +spole=0 -E &lt;&lt;EOF
 0 0.7853981633974483
 EOF
 </pre></div>
 </div>
 <p>Where spole and npole are integers from the range of 0 to 3 inclusive and represent the positions of the north polar and south polar squares.</p>
 <p>Output of above command:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>0 0.7853981633974483 0.00 41.94
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 0.7853981633974483 0.00 41.94
 </pre></div>
 </div>
 </div>
 <div class="section" id="what-options-does-proj-allow-for-the-shape-of-the-earth-geodesy">
 <h2>What options does PROJ allow for the shape of the Earth (geodesy)?<a class="headerlink" href="#what-options-does-proj-allow-for-the-shape-of-the-earth-geodesy" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c">https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c</a>
-for possible ellipse options. For example, putting <code class="docutils literal"><span class="pre">+ellps=WGS84</span></code> uses
-the <code class="docutils literal"><span class="pre">WGS84</span></code> Earth shape.</p>
+for possible ellipse options. For example, putting <code class="docutils literal notranslate"><span class="pre">+ellps=WGS84</span></code> uses
+the <code class="docutils literal notranslate"><span class="pre">WGS84</span></code> Earth shape.</p>
 </div>
 <div class="section" id="what-if-i-want-a-spherical-earth">
 <h2>What if I want a spherical Earth?<a class="headerlink" href="#what-if-i-want-a-spherical-earth" title="Permalink to this headline">¶</a></h2>
-<p>Use <code class="docutils literal"><span class="pre">+ellps=sphere</span></code>.  See <a class="reference external" href="https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c">https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c</a>
+<p>Use <code class="docutils literal notranslate"><span class="pre">+ellps=sphere</span></code>.  See <a class="reference external" href="https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c">https://github.com/OSGeo/proj.4/blob/master/src/pj_ellps.c</a>
 for the radius used in this case.</p>
 </div>
 <div class="section" id="how-do-i-change-the-radius-of-the-earth-how-do-i-use-proj-for-work-on-mars">
 <h2>How do I change the radius of the Earth?  How do I use PROJ for work on Mars?<a class="headerlink" href="#how-do-i-change-the-radius-of-the-earth-how-do-i-use-proj-for-work-on-mars" title="Permalink to this headline">¶</a></h2>
 <p>You can supply explicit values for the semi minor and semi major axes instead
-of using the symbolic &#8220;sphere&#8221; value.  Eg, if the radius were 2000000m:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+proj=laea +lon_0=-40.000000 +lat_0=74.000000 +x_0=1000000 +y_0=1700000 +a=2000000 +b=2000000&quot;
+of using the symbolic “sphere” value.  Eg, if the radius were 2000000m:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=laea +lon_0=-40.000000 +lat_0=74.000000 +x_0=1000000 +y_0=1700000 +a=2000000 +b=2000000&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-do-i-do-false-eastings-and-false-northings">
 <h2>How do I do False Eastings and False Northings?<a class="headerlink" href="#how-do-i-do-false-eastings-and-false-northings" title="Permalink to this headline">¶</a></h2>
-<p>Use <code class="docutils literal"><span class="pre">+x_0</span></code> and <code class="docutils literal"><span class="pre">+y_0</span></code> in the projection string.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">+x_0</span></code> and <code class="docutils literal notranslate"><span class="pre">+y_0</span></code> in the projection string.</p>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -509,11 +500,11 @@ of using the symbolic &#8220;sphere&#8221; value.  Eg, if the radius were 200000
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -532,6 +523,7 @@ of using the symbolic &#8220;sphere&#8221; value.  Eg, if the radius were 200000
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -541,7 +533,7 @@ of using the symbolic &#8220;sphere&#8221; value.  Eg, if the radius were 200000
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -550,14 +542,13 @@ of using the symbolic &#8220;sphere&#8221; value.  Eg, if the radius were 200000
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

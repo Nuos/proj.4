@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Development" href="index.html"/>
-        <link rel="next" title="Reference" href="reference/index.html"/>
-        <link rel="prev" title="Error handling" href="errorhandling.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference" href="reference/index.html" />
+    <link rel="prev" title="Error handling" href="errorhandling.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -134,7 +125,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -142,9 +133,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -203,8 +195,8 @@ pj_mutex.c).</li>
 </div>
 <div class="section" id="projctx">
 <h2>projCtx<a class="headerlink" href="#projctx" title="Permalink to this headline">¶</a></h2>
-<p>Primarily in order to avoid having pj_errno as a global variable, a &#8220;thread
-context&#8221; structure has been introduced into a variation of the PROJ API for
+<p>Primarily in order to avoid having pj_errno as a global variable, a “thread
+context” structure has been introduced into a variation of the PROJ API for
 the 4.8.0 release.  The pj_init() and pj_init_plus() functions now have context
 variations called pj_init_ctx() and pj_init_plus_ctx() which take a projections
 context.</p>
@@ -214,7 +206,7 @@ is a pj_ctx_ set of functions to create, manipulate, query, and destroy
 contexts.  The contexts are also used now to handle setting debugging mode, and
 to hold an error reporting function for textual error and debug messages.   The
 API looks like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>projPJ pj_init_ctx( projCtx, int, char ** );
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>projPJ pj_init_ctx( projCtx, int, char ** );
 projPJ pj_init_plus_ctx( projCtx, const char * );
 
 projCtx pj_get_default_ctx(void);
@@ -231,7 +223,7 @@ void *pj_ctx_get_app_data( projCtx );
 </pre></div>
 </div>
 <p>Multithreaded applications are now expected to create a projCtx per thread
-using pj_ctx_alloc().  The context&#8217;s error handlers, and app data may be
+using pj_ctx_alloc().  The context’s error handlers, and app data may be
 modified if desired, but at the very least each context has an internal error
 value accessed with pj_ctx_get_errno() as opposed to looking at pj_errno.</p>
 <p>Note that pj_errno continues to exist, and it is set by pj_ctx_set_errno() (as
@@ -249,7 +241,7 @@ for testing multithreaded use of PROJ.  It performs a series of reprojections
 to setup a table expected results, and then it does them many times in several
 threads to confirm that the results are consistent.  At this time this program
 is not part of the builds but it can be built on linux like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>gcc -g multistresstest.c .libs/libproj.so -lpthread -o multistresstest
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gcc -g multistresstest.c .libs/libproj.so -lpthread -o multistresstest
 ./multistresstest
 </pre></div>
 </div>
@@ -258,9 +250,7 @@ is not part of the builds but it can be built on linux like:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -279,11 +269,11 @@ is not part of the builds but it can be built on linux like:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -302,6 +292,7 @@ is not part of the builds but it can be built on linux like:</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -311,7 +302,7 @@ is not part of the builds but it can be built on linux like:</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -320,14 +311,13 @@ is not part of the builds but it can be built on linux like:</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

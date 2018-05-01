@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Equidistant Conic" href="eqdc.html"/>
-        <link rel="prev" title="Eckert VI" href="eck6.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Equidistant Conic" href="eqdc.html" />
+    <link rel="prev" title="Eckert VI" href="eck6.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -104,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="aeqd.html">Azimuthal Equidistant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -128,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="eck6.html">Eckert VI</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Equidistant Cylindrical (Plate Carrée)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mathematical-definition">Mathematical definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#further-reading">Further reading</a></li>
 </ul>
@@ -196,12 +188,12 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qsc.html">Quadrilateralized Spherical Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robin.html">Robinson</a></li>
@@ -265,7 +257,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -273,9 +265,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -337,16 +330,17 @@
 <tr class="row-odd"><td><strong>Defined area</strong></td>
 <td>Global, but best used near the equator</td>
 </tr>
-<tr class="row-even"><td><strong>Implemented by</strong></td>
-<td>Gerald I. Evenden</td>
+<tr class="row-even"><td><strong>Alias</strong></td>
+<td>eqc</td>
 </tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-even"><td><cite>+lat_ts</cite></td>
-<td>Latitude of true scale. Defaults to 0.0</td>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
 </tr>
-<tr class="row-odd"><td><cite>+lat_0</cite></td>
-<td>Center of the map : latitude of origin</td>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
@@ -363,7 +357,7 @@ In particular, the plate carrée has become a standard for global raster dataset
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>Projection Name</td>
-<td>(lat ts=) <span class="math">\(\phi_0\)</span></td>
+<td>(lat ts=) <span class="math notranslate nohighlight">\(\phi_0\)</span></td>
 </tr>
 <tr class="row-even"><td>Plain/Plane Chart</td>
 <td>0°</td>
@@ -395,33 +389,86 @@ In particular, the plate carrée has become a standard for global raster dataset
 </tbody>
 </table>
 <p>Example using EPSG 32662 (WGS84 Plate Carrée):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 2 47 | proj +proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 2 47 | proj +proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 222638.98       5232016.07
 </pre></div>
 </div>
 <p>Example using Plate Carrée projection with true scale at latitude 30° and central meridian 90°W:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo -88 30 | proj +proj=eqc +lat_ts=30 +lon_0=90w
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo -88 30 | proj +proj=eqc +lat_ts=30 +lon_0=90w
 192811.01       3339584.72
 </pre></div>
 </div>
 </div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-0">
+<code class="descname">+lat_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-ts">
+<code class="descname">+lat_ts</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of true scale. Defines the latitude where scale is not distorted.
+Takes precedence over <code class="docutils literal notranslate"><span class="pre">+k_0</span></code> if both options are used together.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-r">
+<code class="descname">+R</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the sphere given in meters. If used in conjunction with <code class="docutils literal notranslate"><span class="pre">+ellps</span></code>
+<code class="docutils literal notranslate"><span class="pre">+R</span></code> takes precedence.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="mathematical-definition">
 <h2>Mathematical definition<a class="headerlink" href="#mathematical-definition" title="Permalink to this headline">¶</a></h2>
-<p>The formulas describing the Equidistant Cylindrical projection are all taken from Snyder&#8217;s <a class="reference internal" href="../../references.html#snyder1987" id="id1">[Snyder1987]</a>.</p>
-<p><span class="math">\(\phi_{ts}\)</span> is the latitude of true scale, that mean the standard parallels where the scale of the projection is true. It can be set with <code class="docutils literal"><span class="pre">+lat_ts</span></code>.</p>
-<p><span class="math">\(\phi_0\)</span> is the latitude of origin that match the center of the map. It can be set with <code class="docutils literal"><span class="pre">+lat_0</span></code>.</p>
+<p>The formulas describing the Equidistant Cylindrical projection are all taken from Snyder’s <a class="reference internal" href="../../references.html#snyder1987" id="id1">[Snyder1987]</a>.</p>
+<p><span class="math notranslate nohighlight">\(\phi_{ts}\)</span> is the latitude of true scale, that mean the standard parallels where the scale of the projection is true. It can be set with <code class="docutils literal notranslate"><span class="pre">+lat_ts</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(\phi_0\)</span> is the latitude of origin that match the center of the map. It can be set with <code class="docutils literal notranslate"><span class="pre">+lat_0</span></code>.</p>
 <div class="section" id="forward-projection">
 <h3>Forward projection<a class="headerlink" href="#forward-projection" title="Permalink to this headline">¶</a></h3>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x = \lambda \cos \phi_{ts}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = \phi - \phi_0\]</div>
 </div>
 <div class="section" id="inverse-projection">
 <h3>Inverse projection<a class="headerlink" href="#inverse-projection" title="Permalink to this headline">¶</a></h3>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\lambda = x / cos \phi_{ts}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi = y + \phi_0\]</div>
 </div>
 </div>
@@ -436,9 +483,7 @@ In particular, the plate carrée has become a standard for global raster dataset
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -457,11 +502,11 @@ In particular, the plate carrée has become a standard for global raster dataset
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -480,6 +525,7 @@ In particular, the plate carrée has become a standard for global raster dataset
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -489,7 +535,7 @@ In particular, the plate carrée has become a standard for global raster dataset
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -498,14 +544,13 @@ In particular, the plate carrée has become a standard for global raster dataset
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

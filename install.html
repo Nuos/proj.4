@@ -25,28 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Using PROJ" href="usage/index.html"/>
-        <link rel="prev" title="Download" href="download.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using PROJ" href="usage/index.html" />
+    <link rel="prev" title="Download" href="download.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -126,7 +118,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">PROJ.4</a>
@@ -134,9 +126,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -196,21 +189,21 @@ likely that PROJ is already installed.</p>
 <ol class="arabic simple">
 <li>Download either the <a class="reference external" href="http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86.exe">32 bit</a> or <a class="reference external" href="http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe">64 bit</a> installer.</li>
 <li>Run the OSGeo4W setup program.</li>
-<li>Select &#8220;Advanced Install&#8221; and press Next.</li>
-<li>Select &#8220;Install from Internet&#8221; and press Next.</li>
+<li>Select “Advanced Install” and press Next.</li>
+<li>Select “Install from Internet” and press Next.</li>
 <li>Select a installation directory. The default suggestion is fine in most cases. Press Next.</li>
-<li>Select &#8220;Local packacke directory&#8221;. The suggestions is fine in most cases. Press Next.</li>
-<li>Select &#8220;Direct connection&#8221; and press Next.</li>
+<li>Select “Local packacke directory”. The suggestions is fine in most cases. Press Next.</li>
+<li>Select “Direct connection” and press Next.</li>
 <li>Choose the download.osgeo.org and press Next.</li>
-<li>Find &#8220;proj&#8221; under &#8220;Commandline_Utilities&#8221; and click the package in the &#8220;New&#8221; column until the version you want to install appears.</li>
+<li>Find “proj” under “Commandline_Utilities” and click the package in the “New” column until the version you want to install appears.</li>
 <li>Press next to install PROJ.</li>
 </ol>
-<p>You should now have a &#8220;OSGeo&#8221; menu in your start menu. Within that menu you can
-find the &#8220;OSGeo4W Shell&#8221; where you have access to all the OSGeo4W applications,
+<p>You should now have a “OSGeo” menu in your start menu. Within that menu you can
+find the “OSGeo4W Shell” where you have access to all the OSGeo4W applications,
 including proj.</p>
-<p>For those who are more inclined to the command line, steps 2&#8211;10 above can be
+<p>For those who are more inclined to the command line, steps 2–10 above can be
 accomplished by executing the following command:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>C:\temp\osgeo4w-setup-x86-64.exe -q -k -r -A -s http://download.osgeo.org/osgeo4w/ -a x86_64 -P proj
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C:\temp\osgeo4w-setup-x86-64.exe -q -k -r -A -s http://download.osgeo.org/osgeo4w/ -a x86_64 -P proj
 </pre></div>
 </div>
 </div>
@@ -221,14 +214,14 @@ is a few examples for some of the more common Linux distributions:</p>
 <div class="section" id="debian">
 <h3>Debian<a class="headerlink" href="#debian" title="Permalink to this headline">¶</a></h3>
 <p>On Debian and similar systems (e.g. Ubuntu) the APT package manager is used:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>sudo apt-get install proj-bin
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install proj-bin
 </pre></div>
 </div>
 </div>
 <div class="section" id="red-hat">
 <h3>Red Hat<a class="headerlink" href="#red-hat" title="Permalink to this headline">¶</a></h3>
 <p>On Red Hat based system packages are installed with yum:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>sudo yum install proj
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo yum install proj
 </pre></div>
 </div>
 </div>
@@ -243,9 +236,7 @@ is a few examples for some of the more common Linux distributions:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -264,11 +255,11 @@ is a few examples for some of the more common Linux distributions:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -287,6 +278,7 @@ is a few examples for some of the more common Linux distributions:</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -296,7 +288,7 @@ is a few examples for some of the more common Linux distributions:</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -305,14 +297,13 @@ is a few examples for some of the more common Linux distributions:</p>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

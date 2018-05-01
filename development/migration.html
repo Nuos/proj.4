@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Development" href="index.html"/>
-        <link rel="next" title="Development rules and tools for PROJ code contributors" href="for_proj_contributors.html"/>
-        <link rel="prev" title="Language bindings" href="bindings.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Development rules and tools for PROJ code contributors" href="for_proj_contributors.html" />
+    <link rel="prev" title="Language bindings" href="bindings.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -134,7 +125,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -142,9 +133,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -216,14 +208,14 @@ The primary aim of the new API is to allow just that. And to do that, you must r
 that the world is inherently 4 dimensional. You may in many cases assume one or more of
 the coordinates to be constant, but basically, to obtain geodetic accuracy transformations,
 you need to work in 4 dimensions.</p>
-<p>Now, having described the background for introducing the new API, let&#8217;s try to show
+<p>Now, having described the background for introducing the new API, let’s try to show
 how to use it. First note that in order to go from system A to system B, the old API
 starts by doing an <strong>inverse</strong> transformation from system A to WGS84, then does a
 <strong>forward</strong> transformation from WGS84 to system B.</p>
-<p>With <code class="docutils literal"><span class="pre">cs2cs</span></code> being the command line interface to the old API, and <code class="docutils literal"><span class="pre">cct</span></code> being the same
+<p>With <code class="docutils literal notranslate"><span class="pre">cs2cs</span></code> being the command line interface to the old API, and <code class="docutils literal notranslate"><span class="pre">cct</span></code> being the same
 for the new, this example of doing the same thing in both world views will should give
 an idea of the differences:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 300000 6100000 | cs2cs +proj=utm +zone=33 +ellps=GRS80 +to +proj=utm +zone=32 +ellps=GRS80
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 300000 6100000 | cs2cs +proj=utm +zone=33 +ellps=GRS80 +to +proj=utm +zone=32 +ellps=GRS80
 683687.87       6099299.66 0.00
 
 
@@ -231,16 +223,16 @@ $ echo 300000 6100000 0 0 | cct +proj=pipeline +step +inv +proj=utm +zone=33 +el
 683687.8667   6099299.6624    0.0000    0.0000
 </pre></div>
 </div>
-<p>Lookout for the <code class="docutils literal"><span class="pre">+inv</span></code> in the first <code class="docutils literal"><span class="pre">+step</span></code>, indicating an inverse transform.</p>
+<p>Lookout for the <code class="docutils literal notranslate"><span class="pre">+inv</span></code> in the first <code class="docutils literal notranslate"><span class="pre">+step</span></code>, indicating an inverse transform.</p>
 </div>
 <div class="section" id="code-example">
 <h2>Code example<a class="headerlink" href="#code-example" title="Permalink to this headline">¶</a></h2>
 <p>The difference between the old and new API is shown here with a few examples. Below
-we implement the same program with the two different API&#8217;s. The program reads
+we implement the same program with the two different API’s. The program reads
 input latitude and longitude from the command line and convert them to
 projected coordinates with the Mercator projection.</p>
 <p>We start by writing the program for PROJ v. 4:</p>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;proj_api.h&gt;</span><span class="cp"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;proj_api.h&gt;</span><span class="cp"></span>
 
 <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">projPJ</span> <span class="n">pj_merc</span><span class="p">,</span> <span class="n">pj_latlong</span><span class="p">;</span>
@@ -263,7 +255,7 @@ projected coordinates with the Mercator projection.</p>
 </pre></div>
 </div>
 <p>The same program implemented using PROJ v. 5:</p>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;proj.h&gt;</span><span class="cp"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;proj.h&gt;</span><span class="cp"></span>
 
 <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">PJ</span> <span class="o">*</span><span class="n">P</span><span class="p">;</span>
@@ -283,30 +275,30 @@ projected coordinates with the Mercator projection.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Looking at the two different programs, there&#8217;s a few immediate
+<p>Looking at the two different programs, there’s a few immediate
 differences that catches the eye. First off, the included header file describing
-the API has changed from <code class="docutils literal"><span class="pre">proj_api.h</span></code> to simply <code class="docutils literal"><span class="pre">proj.h</span></code>. All functions in <code class="docutils literal"><span class="pre">proj.h</span></code>
-belongs to the <code class="docutils literal"><span class="pre">proj_</span></code> namespace.</p>
-<p>With the new API also comes new datatypes. E.g. the transformation object <code class="docutils literal"><span class="pre">projPJ</span></code>
-which has been changed to a pointer of type <code class="docutils literal"><span class="pre">PJ</span></code>. This is done to highlight the
+the API has changed from <code class="docutils literal notranslate"><span class="pre">proj_api.h</span></code> to simply <code class="docutils literal notranslate"><span class="pre">proj.h</span></code>. All functions in <code class="docutils literal notranslate"><span class="pre">proj.h</span></code>
+belongs to the <code class="docutils literal notranslate"><span class="pre">proj_</span></code> namespace.</p>
+<p>With the new API also comes new datatypes. E.g. the transformation object <code class="docutils literal notranslate"><span class="pre">projPJ</span></code>
+which has been changed to a pointer of type <code class="docutils literal notranslate"><span class="pre">PJ</span></code>. This is done to highlight the
 actual nature of the object, instead of hiding it away behind a typedef. New data
 types for handling coordinates have also been introduced. In the above example we
-use the <code class="docutils literal"><span class="pre">PJ_COORD</span></code>, which is a union of various types. The benefit of this is that
+use the <code class="docutils literal notranslate"><span class="pre">PJ_COORD</span></code>, which is a union of various types. The benefit of this is that
 it is possible to use the various structs in the union to communicate what state
 the data is in at different points in the program. For instance as in the above
 example where the coordinate is read from STDIN as a geodetic coordinate,
-communicated to the reader of the code by using the <code class="docutils literal"><span class="pre">c.lp</span></code> struct.
+communicated to the reader of the code by using the <code class="docutils literal notranslate"><span class="pre">c.lp</span></code> struct.
 After it has been projected we print it to STDOUT by accessing the individual
-elements in <code class="docutils literal"><span class="pre">c.xy</span></code> to illustrate that the coordinate is now in projected space.
+elements in <code class="docutils literal notranslate"><span class="pre">c.xy</span></code> to illustrate that the coordinate is now in projected space.
 Data types are prefixed with <cite>PJ_</cite>.</p>
 <p>The final, and perhaps biggest, change is that the fundamental concept of
-transformations in PROJ are now handled in a single transformation object (<code class="docutils literal"><span class="pre">PJ</span></code>)
+transformations in PROJ are now handled in a single transformation object (<code class="docutils literal notranslate"><span class="pre">PJ</span></code>)
 and not by stating the source and destination systems as previously. It is of
 course still possible to do just that, but the transformation object now
 captures the whole transformation from source to destination in one. In the
 example with the old API the source system is described as
-<code class="docutils literal"><span class="pre">+proj=latlon</span> <span class="pre">+ellps=clrk66</span></code> and the destination system is described as
-<code class="docutils literal"><span class="pre">+proj=merc</span> <span class="pre">+ellps=clrk66</span> <span class="pre">+lat_ts=33</span></code>. Since the Mercator projection accepts
+<code class="docutils literal notranslate"><span class="pre">+proj=latlon</span> <span class="pre">+ellps=clrk66</span></code> and the destination system is described as
+<code class="docutils literal notranslate"><span class="pre">+proj=merc</span> <span class="pre">+ellps=clrk66</span> <span class="pre">+lat_ts=33</span></code>. Since the Mercator projection accepts
 geodetic coordinates as its input, the description of the source in this case
 is superfluous. We use that to our advantage in the new API and simply state
 the destination. This is simple at a glance, but is actually a big conceptual
@@ -385,9 +377,7 @@ source and destination systems are.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -406,11 +396,11 @@ source and destination systems are.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -429,6 +419,7 @@ source and destination systems are.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -438,7 +429,7 @@ source and destination systems are.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -447,14 +438,13 @@ source and destination systems are.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

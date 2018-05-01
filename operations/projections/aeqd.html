@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Airy" href="airy.html"/>
-        <link rel="prev" title="Albers Equal Area" href="aea.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Airy" href="airy.html" />
+    <link rel="prev" title="Albers Equal Area" href="aea.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -101,10 +92,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Coordinate operations</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Projections</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="aea.html">Albers Equal Area</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Azimuthal Equidistant</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Azimuthal Equidistant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -191,12 +185,12 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qsc.html">Quadrilateralized Spherical Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robin.html">Robinson</a></li>
@@ -260,7 +254,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -268,9 +262,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -328,27 +323,97 @@
 <tr class="row-even"><td><strong>Available forms</strong></td>
 <td>Forward and inverse, spherical and elliptical projection</td>
 </tr>
-<tr class="row-odd"><td><strong>Implemented by</strong></td>
-<td>Gerald I. Evenden</td>
+<tr class="row-odd"><td><strong>Alias</strong></td>
+<td>aeqd</td>
 </tr>
-<tr class="row-even"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-even"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-odd"><td><cite>+guam</cite></td>
-<td>Use Guam elliptical formulas. Only accurate near the
-Island of Guam (<span class="math">\(\lambda\approx 144.5^{\circ}\)</span>,
-<span class="math">\(\phi\approx 13.5^{\circ}\)</span>)
-Defaults to false.</td>
+<tr class="row-odd"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
+</tr>
+<tr class="row-even"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
 <a class="reference internal image-reference" href="../../_images/aeqd.png"><img alt="Azimuthal Equidistant" src="../../_images/aeqd.png" style="width: 1200.0px; height: 900.0px;" /></a>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All options are optional for the Azimuthal Equidistant projection.</p>
+</div>
+<dl class="option">
+<dt id="cmdoption-arg-guam">
+<code class="descname">+guam</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-guam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use Guam elliptical formulas. Only accurate near the Island of Guam
+(<span class="math notranslate nohighlight">\(\lambda\approx 144.5^{\circ}\)</span>, <span class="math notranslate nohighlight">\(\phi\approx 13.5^{\circ}\)</span>)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-k-0">
+<code class="descname">+k_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-k-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale factor. Determines scale factor used in the projection.</p>
+<p><em>Defaults to 1.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-ts">
+<code class="descname">+lat_ts</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of true scale. Defines the latitude where scale is not distorted.
+Takes precedence over <code class="docutils literal notranslate"><span class="pre">+k_0</span></code> if both options are used together.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-0">
+<code class="descname">+lat_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-r">
+<code class="descname">+R</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the sphere given in meters. If used in conjunction with <code class="docutils literal notranslate"><span class="pre">+ellps</span></code>
+<code class="docutils literal notranslate"><span class="pre">+R</span></code> takes precedence.</p>
+</dd></dl>
+
+</div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -367,11 +432,11 @@ Defaults to false.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -390,6 +455,7 @@ Defaults to false.</td>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -399,7 +465,7 @@ Defaults to false.</td>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -408,14 +474,13 @@ Defaults to false.</td>
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

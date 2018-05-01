@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Two Point Equidistant" href="tpeqd.html"/>
-        <link rel="prev" title="Tissot" href="tissot.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Two Point Equidistant" href="tpeqd.html" />
+    <link rel="prev" title="Tissot" href="tissot.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -104,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="aeqd.html">Azimuthal Equidistant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -191,12 +182,12 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qsc.html">Quadrilateralized Spherical Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robin.html">Robinson</a></li>
@@ -212,6 +203,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tissot.html">Tissot</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Transverse Mercator</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mathematical-definition">Mathematical definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#further-reading">Further reading</a></li>
 </ul>
@@ -265,7 +257,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -273,9 +265,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -324,8 +317,8 @@
 <p>The transverse Mercator projection in its various forms is the most widely used projected coordinate system for world topographical and offshore mapping.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="27%" />
+<col width="73%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Classification</strong></td>
@@ -335,18 +328,20 @@
 <td>Forward and inverse, Spherical and Elliptical</td>
 </tr>
 <tr class="row-odd"><td><strong>Defined area</strong></td>
-<td>Global, but reasonably accurate only within 15 degrees of the central meridian</td>
+<td>Global, but reasonably accurate only within 15 degrees
+of the central meridian</td>
 </tr>
-<tr class="row-even"><td><strong>Implemented by</strong></td>
-<td>Gerald I. Evenden</td>
+<tr class="row-even"><td><strong>Alias</strong></td>
+<td>tmerc</td>
 </tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-even"><td><cite>+lat_0</cite></td>
-<td>Latitude of origin (Default to 0)</td>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
 </tr>
-<tr class="row-odd"><td><cite>+k0</cite></td>
-<td>Scale factor at natural origin (Default to 1)</td>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
@@ -411,42 +406,98 @@ In the post-war years, these concepts were extended into the Universal Transvers
 </tbody>
 </table>
 <p>Example using Gauss-Kruger on Germany area (aka EPSG:31467)</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 9 51 | proj +proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=bessel +datum=potsdam +units=m +no_defs
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 9 51 | proj +proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=bessel +datum=potsdam +units=m +no_defs
 3500000.00  5651505.56
 </pre></div>
 </div>
 <p>Example using Gauss Boaga on Italy area (EPSG:3004)</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ echo 15 42 | proj +proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=2520000 +y_0=0 +ellps=intl +units=m +no_defs
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo 15 42 | proj +proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=2520000 +y_0=0 +ellps=intl +units=m +no_defs
 2520000.00  4649858.60
 </pre></div>
 </div>
 </div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All parameters for the projection are optional.</p>
+</div>
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-0">
+<code class="descname">+lat_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-r">
+<code class="descname">+R</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the sphere given in meters. If used in conjunction with <code class="docutils literal notranslate"><span class="pre">+ellps</span></code>
+<code class="docutils literal notranslate"><span class="pre">+R</span></code> takes precedence.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-k-0">
+<code class="descname">+k_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-k-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale factor. Determines scale factor used in the projection.</p>
+<p><em>Defaults to 1.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+</div>
 <div class="section" id="mathematical-definition">
 <h2>Mathematical definition<a class="headerlink" href="#mathematical-definition" title="Permalink to this headline">¶</a></h2>
-<p>The formulas describing the Transverse Mercator are all taken from Evenden&#8217;s <a class="reference internal" href="../../references.html#evenden2005" id="id1">[Evenden2005]</a>.</p>
-<p><span class="math">\(\phi_0\)</span> is the latitude of origin that match the center of the map. It can be set with <code class="docutils literal"><span class="pre">+lat_0</span></code>.</p>
-<p><span class="math">\(k_0\)</span> is the scale factor at the natural origin (on the central meridian). It can be set with <code class="docutils literal"><span class="pre">+k_0</span></code>.</p>
-<p><span class="math">\(M(\phi)\)</span> is the meridional distance.</p>
+<p>The formulas describing the Transverse Mercator are all taken from Evenden’s <a class="reference internal" href="../../references.html#evenden2005" id="id1">[Evenden2005]</a>.</p>
+<p><span class="math notranslate nohighlight">\(\phi_0\)</span> is the latitude of origin that match the center of the map. It can be set with <code class="docutils literal notranslate"><span class="pre">+lat_0</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(k_0\)</span> is the scale factor at the natural origin (on the central meridian). It can be set with <code class="docutils literal notranslate"><span class="pre">+k_0</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(M(\phi)\)</span> is the meridional distance.</p>
 <div class="section" id="spherical-form">
 <h3>Spherical form<a class="headerlink" href="#spherical-form" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="forward-projection">
 <h4>Forward projection<a class="headerlink" href="#forward-projection" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[B = \cos \phi \sin \lambda\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x = \frac{k_0}{2} \ln(\frac{1+B}{1-B})\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[y = k_0 ( \arctan(\frac{\tan(\phi)}{\cos \lambda}) - \phi_0)\]</div>
 </div>
 <div class="section" id="inverse-projection">
 <h4>Inverse projection<a class="headerlink" href="#inverse-projection" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[D = \frac{y}{k_0} + \phi_0\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[x' = \frac{x}{k_0}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi = \arcsin(\frac{\sin D}{\cosh x'})\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\lambda = \arctan(\frac{\sinh x'}{\cos D})\]</div>
 </div>
 </div>
@@ -454,20 +505,20 @@ In the post-war years, these concepts were extended into the Universal Transvers
 <h3>Elliptical form<a class="headerlink" href="#elliptical-form" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id2">
 <h4>Forward projection<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[N = \frac{k_0}{(1 - e^2 \sin^2\phi)^{1/2}}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[R = \frac{k_0(1-e^2)}{(1-e^2 \sin^2\phi)^{3/2}}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[t = \tan(\phi)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\eta = \frac{e^2}{1-e^2}cos^2\phi\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}x &amp;= k_0 \lambda \cos \phi \\
   &amp;+ \frac{k_0 \lambda^3 \cos^3\phi}{3!}(1-t^2+\eta^2) \\
   &amp;+ \frac{k_0 \lambda^5 \cos^5\phi}{5!}(5-18t^2+t^4+14\eta^2-58t^2\eta^2) \\
   &amp;+\frac{k_0 \lambda^7 \cos^7\phi}{7!}(61-479t^2+179t^4-t^6)\end{split}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}y &amp;= M(\phi) \\
   &amp;+ \frac{k_0 \lambda^2 \sin(\phi) \cos \phi}{2!} \\
   &amp;+ \frac{k_0 \lambda^4 \sin(\phi) \cos^3\phi}{4!}(5-t^2+9\eta^2+4\eta^4) \\
@@ -476,23 +527,23 @@ In the post-war years, these concepts were extended into the Universal Transvers
 </div>
 <div class="section" id="id3">
 <h4>Inverse projection<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\phi_1 = M^-1(y)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[N_1 = \frac{k_0}{1 - e^2 \sin^2\phi_1)^{1/2}}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[R_1 = \frac{k_0(1-e^2)}{(1-e^2 \sin^2\phi_1)^{3/2}}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[t_1 = \tan(\phi_1)\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\eta_1 = \frac{e^2}{1-e^2}cos^2\phi_1\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}\phi &amp;= \phi_1 \\
      &amp;- \frac{t_1 x^2}{2! R_1 N_1} \\
      &amp;+ \frac{t_1 x^4}{4! R_1 N_1^3}(5+3t_1^2+\eta_1^2-4\eta_1^4-9\eta_1^2t_1^2) \\
      &amp;- \frac{t_1 x^6}{6! R_1 N_1^5}(61+90t_1^2+46\eta_1^2+45t_1^4-252t_1^2\eta_1^2) \\
      &amp;+ \frac{t_1 x^8}{8! R_1 N_1^7}(1385+3633t_1^2+4095t_1^4+1575t_1^6)\end{split}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}\lambda &amp;= \frac{x}{\cos \phi N_1} \\
         &amp;- \frac{x^3}{3! \cos \phi N_1^3}(1+2t_1^2+\eta_1^2) \\
         &amp;+ \frac{x^5}{5! \cos \phi N_1^5}(5+6\eta_1^2+28t_1^2-3\eta_1^2+8t_1^2\eta_1^2) \\
@@ -511,9 +562,7 @@ In the post-war years, these concepts were extended into the Universal Transvers
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -532,11 +581,11 @@ In the post-war years, these concepts were extended into the Universal Transvers
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -555,6 +604,7 @@ In the post-war years, these concepts were extended into the Universal Transvers
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -564,7 +614,7 @@ In the post-war years, these concepts were extended into the Universal Transvers
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -573,14 +623,13 @@ In the post-war years, these concepts were extended into the Universal Transvers
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

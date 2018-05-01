@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Projections" href="index.html"/>
-        <link rel="next" title="Robinson" href="robin.html"/>
-        <link rel="prev" title="Quartic Authalic" href="qua_aut.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Robinson" href="robin.html" />
+    <link rel="prev" title="Quartic Authalic" href="qua_aut.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -104,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="aeqd.html">Azimuthal Equidistant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airy.html">Airy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aitoff.html">Aitoff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alsk.html">Mod. Stererographics of Alaska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alsk.html">Modified Stererographics of Alaska</a></li>
 <li class="toctree-l3"><a class="reference internal" href="apian.html">Apian Globular I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="august.html">August Epicycloidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bacon.html">Bacon Globular</a></li>
@@ -191,15 +182,16 @@
 <li class="toctree-l3"><a class="reference internal" href="putp1.html">Putnins P1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp2.html">Putnins P2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp3.html">Putnins P3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp3p.html">Putnins P3’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp4p.html">Putnins P4’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp5.html">Putnins P5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp5p.html">Putnins P5’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putp6.html">Putnins P6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6&#8217;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="putp6p.html">Putnins P6’</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qua_aut.html">Quartic Authalic</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Quadrilateralized Spherical Cube</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#further-reading">Further reading</a></li>
 </ul>
 </li>
@@ -264,7 +256,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -272,9 +264,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -335,16 +328,17 @@
 <tr class="row-odd"><td><strong>Defined area</strong></td>
 <td>Global</td>
 </tr>
-<tr class="row-even"><td><strong>Implemented by</strong></td>
-<td>Martin Lambers</td>
+<tr class="row-even"><td><strong>Alias</strong></td>
+<td>qsc</td>
 </tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>2D</td>
 </tr>
-<tr class="row-even"><td><cite>+lat_0</cite></td>
-<td>Latitude (in degrees) of the view position.</td>
+<tr class="row-even"><td><strong>Input type</strong></td>
+<td>Geodetic coordinates</td>
 </tr>
-<tr class="row-odd"><td><cite>+lon_0</cite></td>
-<td>Longitude (in degrees) of the view position.</td>
+<tr class="row-odd"><td><strong>Output type</strong></td>
+<td>Projected coordinates</td>
 </tr>
 </tbody>
 </table>
@@ -373,22 +367,22 @@ cube. The cube side is selected by choosing one of the following six projection 
 <col width="44%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=0</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=0</span></code></td>
 <td>front cube side</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=90</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=90</span></code></td>
 <td>right cube side</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=180</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=180</span></code></td>
 <td>back cube side</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=-90</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=0</span> <span class="pre">+lon_0=-90</span></code></td>
 <td>left cube side</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">+lat_0=90</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=90</span></code></td>
 <td>top cube side</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">+lat_0=-90</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">+lat_0=-90</span></code></td>
 <td>bottom cube side</td>
 </tr>
 </tbody>
@@ -399,7 +393,7 @@ A preceding shift to a sphere is performed automatically; see <a class="referenc
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>The following example uses QSC projection via GDAL to create the six cube side
 maps from a world map for the WGS84 ellipsoid:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>gdalwarp -t_srs &quot;+wktext +proj=qsc +units=m +ellps=WGS84  +lat_0=0 +lon_0=0&quot;        \
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gdalwarp -t_srs &quot;+wktext +proj=qsc +units=m +ellps=WGS84  +lat_0=0 +lon_0=0&quot;        \
     -wo SOURCE_EXTRA=100 -wo SAMPLE_GRID=YES -te -6378137 -6378137 6378137 6378137  \
     worldmap.tiff frontside.tiff
 
@@ -426,11 +420,11 @@ gdalwarp -t_srs &quot;+wktext +proj=qsc +units=m +ellps=WGS84 +lat_0=-90 +lon_0=
 </div>
 <p>Explanation:</p>
 <ul class="simple">
-<li>QSC projection is selected with <code class="docutils literal"><span class="pre">+wktext</span> <span class="pre">+proj=qsc</span></code>.</li>
-<li>The WGS84 ellipsoid is specified with <code class="docutils literal"><span class="pre">+ellps=WGS84</span></code>.</li>
-<li>The cube side is selected with <code class="docutils literal"><span class="pre">+lat_0=...</span> <span class="pre">+lon_0=...</span></code>.</li>
-<li>The <code class="docutils literal"><span class="pre">-wo</span></code> options are necessary for GDAL to avoid holes in the output maps.</li>
-<li>The <code class="docutils literal"><span class="pre">-te</span></code> option limits the extends of the output map to the major axis diameter
+<li>QSC projection is selected with <code class="docutils literal notranslate"><span class="pre">+wktext</span> <span class="pre">+proj=qsc</span></code>.</li>
+<li>The WGS84 ellipsoid is specified with <code class="docutils literal notranslate"><span class="pre">+ellps=WGS84</span></code>.</li>
+<li>The cube side is selected with <code class="docutils literal notranslate"><span class="pre">+lat_0=...</span> <span class="pre">+lon_0=...</span></code>.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">-wo</span></code> options are necessary for GDAL to avoid holes in the output maps.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">-te</span></code> option limits the extends of the output map to the major axis diameter
 (from -radius to +radius in both x and y direction). These are the dimensions of one side
 of the circumscribing cube.</li>
 </ul>
@@ -461,6 +455,48 @@ of the circumscribing cube.</li>
 </tbody>
 </table>
 </div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All parameters for the projection are optional.</p>
+</div>
+<dl class="option">
+<dt id="cmdoption-arg-lon-0">
+<code class="descname">+lon_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lon-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Longitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-lat-0">
+<code class="descname">+lat_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-lat-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latitude of projection center.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x-0">
+<code class="descname">+x_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-x-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False easting.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-y-0">
+<code class="descname">+y_0</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-y-0" title="Permalink to this definition">¶</a></dt>
+<dd><p>False northing.</p>
+<p><em>Defaults to 0.0.</em></p>
+</dd></dl>
+
+</div>
 <div class="section" id="further-reading">
 <h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -472,9 +508,7 @@ of the circumscribing cube.</li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -493,11 +527,11 @@ of the circumscribing cube.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -516,6 +550,7 @@ of the circumscribing cube.</li>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -525,7 +560,7 @@ of the circumscribing cube.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -534,14 +569,13 @@ of the circumscribing cube.</li>
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Applications" href="index.html"/>
-        <link rel="next" title="gie" href="gie.html"/>
-        <link rel="prev" title="cs2cs" href="cs2cs.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gie" href="gie.html" />
+    <link rel="prev" title="cs2cs" href="cs2cs.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -131,7 +122,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -139,9 +130,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -199,10 +191,10 @@
 azimuth  of  a terminus point given a initial point latitude, longitude,
 azimuth and distance (direct) or  the  forward and  back azimuths and distance
 between an initial and terminus point latitudes and  longitudes  (inverse).
-The  results  are accurate  to  round  off for <span class="math">\(|f| &lt; 1/50\)</span>, where
-<span class="math">\(f\)</span> is flattening.</p>
+The  results  are accurate  to  round  off for <span class="math notranslate nohighlight">\(|f| &lt; 1/50\)</span>, where
+<span class="math notranslate nohighlight">\(f\)</span> is flattening.</p>
 <p><strong class="program">invgeod</strong> may not be available on all  platforms;  in  this  case
-use <a class="reference internal" href="#cmdoption-geod-i"><code class="xref std std-option docutils literal"><span class="pre">geod</span> <span class="pre">-I</span></code></a> instead.</p>
+use <a class="reference internal" href="#cmdoption-geod-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">geod</span> <span class="pre">-I</span></code></a> instead.</p>
 <p>The following command-line options can appear in any order:</p>
 <dl class="option">
 <dt id="cmdoption-geod-i">
@@ -244,29 +236,29 @@ option.</p>
 <code class="descname">-f</code><code class="descclassname"> &lt;format&gt;</code><a class="headerlink" href="#cmdoption-geod-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format is a printf format string to control the output form of the
 geographic coordinate values. The default mode is DMS for geographic
-coordinates and &#8220;%.3f&#8221; for distance.</p>
+coordinates and “%.3f” for distance.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="id2">
 <code class="descname">-F</code><code class="descclassname"> &lt;format&gt;</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format is a printf format string to control the output form of the distance
-value (<code class="docutils literal"><span class="pre">-F</span></code>). The default mode is DMS for geographic coordinates and
-&#8220;%.3f&#8221; for distance.</p>
+value (<code class="docutils literal notranslate"><span class="pre">-F</span></code>). The default mode is DMS for geographic coordinates and
+“%.3f” for distance.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-geod-w">
-<code class="descname">-w</code><code class="descclassname">&lt;n&gt;</code><a class="headerlink" href="#cmdoption-geod-w" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-geod-w-n">
+<code class="descname">-w&lt;n&gt;</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-geod-w-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>N is the number of significant fractional digits to employ for seconds
-output (when the option is not specified, <code class="docutils literal"><span class="pre">-w3</span></code> is assumed).</p>
+output (when the option is not specified, <code class="docutils literal notranslate"><span class="pre">-w3</span></code> is assumed).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="id3">
-<code class="descname">-W</code><code class="descclassname">&lt;n&gt;</code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-W&lt;n&gt;</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>N is the number of significant fractional digits to employ for seconds
-output. When <code class="docutils literal"><span class="pre">-W</span></code> is employed the fields will be constant width
+output. When <code class="docutils literal notranslate"><span class="pre">-W</span></code> is employed the fields will be constant width
 with leading zeroes.</p>
 </dd></dl>
 
@@ -274,7 +266,7 @@ with leading zeroes.</p>
 <dt id="cmdoption-geod-p">
 <code class="descname">-p</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-geod-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option causes the azimuthal values to be output as unsigned DMS
-numbers between 0 and 360 degrees. Also note <a class="reference internal" href="#cmdoption-geod-f"><code class="xref std std-option docutils literal"><span class="pre">-f</span></code></a>.</p>
+numbers between 0 and 360 degrees. Also note <a class="reference internal" href="#cmdoption-geod-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a>.</p>
 </dd></dl>
 
 <p>The  <em>+args</em>  command-line  options  are associated with geodetic
@@ -285,7 +277,7 @@ the first occurrence assumed to be the desired value.</p>
 <p>See  <a class="reference internal" href="../usage/projections.html#projections-intro"><span class="std std-ref">Cartographic projection</span></a> for full
 list of these parameters and controls.</p>
 <p>One or more files (processed in left to  right  order)  specify
-the  source  of  data  to be transformed.  A <code class="docutils literal"><span class="pre">-</span></code> will specify the
+the  source  of  data  to be transformed.  A <code class="docutils literal notranslate"><span class="pre">-</span></code> will specify the
 location of processing standard input.  If no files are  specified,
 the input is assumed to be from stdin.</p>
 <p>For  direct determinations input data must be in latitude, longitude,
@@ -300,11 +292,11 @@ azimuthal data must be in decimal degrees  or  DMS  format  and
 input distance data must be in units consistent with the ellipsoid
 major axis or sphere radius units.  The latitude must  lie
 in the range [-90d,90d].  Output geographic coordinates will be
-in DMS (if the <a class="reference internal" href="#cmdoption-geod-f"><code class="xref std std-option docutils literal"><span class="pre">-f</span></code></a> switch is not employed) to 0.001&#8221; with trailing,
+in DMS (if the <a class="reference internal" href="#cmdoption-geod-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a> switch is not employed) to 0.001” with trailing,
 zero-valued minute-second fields deleted.  Output distance
 data will be in the same  units  as  the  ellipsoid  or  sphere
 radius.</p>
-<p>The Earth&#8217;s ellipsoidal figure may be selected in the same manner
+<p>The Earth’s ellipsoidal figure may be selected in the same manner
 as program <strong class="program">proj</strong> by using <em>+ellps=</em>, <em>+a=</em>, <em>+es=</em>, etc.</p>
 <p>Geod may also be used to determine  intermediate  points  along
 either  a  geodesic  line between two points or along an arc of
@@ -326,26 +318,26 @@ points to be determined.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The following script determines the geodesic azimuths and  distance in U.S.
 statute miles from Boston, MA, to Portland, OR:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">geod +ellps=clrk66 &lt;&lt;EOF -I +units=us-mi</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">geod +ellps=clrk66 &lt;&lt;EOF -I +units=us-mi</span>
 <span class="go">42d15&#39;N 71d07&#39;W 45d31&#39;N 123d41&#39;W</span>
 <span class="go">EOF</span>
 </pre></div>
 </div>
 <p>which gives the results:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-66d31&#39;50.141&quot; 75d39&#39;13.083&quot; 2587.504</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-66d31&#39;50.141&quot; 75d39&#39;13.083&quot; 2587.504</span>
 </pre></div>
 </div>
 <p>where the first two values are the azimuth from Boston to Portland,
 the back azimuth from Portland to Boston followed by the distance.</p>
 <p>An  example  of forward geodesic use is to use the Boston location
-and determine Portland&#8217;s location by azimuth and distance:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">geod +ellps=clrk66 &lt;&lt;EOF +units=us-mi</span>
+and determine Portland’s location by azimuth and distance:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">geod +ellps=clrk66 &lt;&lt;EOF +units=us-mi</span>
 <span class="go">42d15&#39;N 71d07&#39;W -66d31&#39;50.141&quot; 2587.504</span>
 <span class="go">EOF</span>
 </pre></div>
 </div>
 <p>which gives:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">45d31&#39;0.003&quot;N 123d40&#39;59.985&quot;W 75d39&#39;13.094&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">45d31&#39;0.003&quot;N 123d40&#39;59.985&quot;W 75d39&#39;13.094&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -367,9 +359,7 @@ precision of the Portland location.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -388,11 +378,11 @@ precision of the Portland location.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -411,6 +401,7 @@ precision of the Portland location.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -420,7 +411,7 @@ precision of the Portland location.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -429,14 +420,13 @@ precision of the Portland location.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

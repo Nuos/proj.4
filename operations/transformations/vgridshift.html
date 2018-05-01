@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Transformations" href="index.html"/>
-        <link rel="next" title="The pipeline operator" href="../pipeline.html"/>
-        <link rel="prev" title="Horizontal grid shift" href="hgridshift.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The pipeline operator" href="../pipeline.html" />
+    <link rel="prev" title="Horizontal grid shift" href="hgridshift.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -106,7 +97,10 @@
 <li class="toctree-l3"><a class="reference internal" href="helmert.html">Helmert transform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="molodensky.html">Molodensky transform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hgridshift.html">Horizontal grid shift</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertical grid shift</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertical grid shift</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pipeline.html">The pipeline operator</a></li>
@@ -131,7 +125,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -139,9 +133,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -187,6 +182,9 @@
             
   <div class="section" id="vertical-grid-shift">
 <span id="vgridshift"></span><h1>Vertical grid shift<a class="headerlink" href="#vertical-grid-shift" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
 <p>Change Vertical datum change by grid shift</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -194,16 +192,14 @@
 <col width="80%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><strong>Input type</strong></td>
+<tr class="row-odd"><td><strong>Domain</strong></td>
+<td>3D</td>
+</tr>
+<tr class="row-even"><td><strong>Input type</strong></td>
 <td>Geodetic coordinates (horizontal), meters (vertical).</td>
 </tr>
-<tr class="row-even"><td><strong>Output type</strong></td>
+<tr class="row-odd"><td><strong>Output type</strong></td>
 <td>Geodetic coordinates (horizontal), meters (vertical).</td>
-</tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
-</tr>
-<tr class="row-even"><td><cite>+grids</cite></td>
-<td>Comma-separated list of grids to load.</td>
 </tr>
 </tbody>
 </table>
@@ -211,30 +207,40 @@
 a specific amount determined by the loaded grids. The simplest use case of the
 horizontal grid shift is applying a single grid. Here we change the vertical
 reference from the ellipsoid to the global geoid model, EGM96:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+vgridshift +grids=egm96_16.gtx
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+vgridshift +grids=egm96_16.gtx
 </pre></div>
 </div>
 <p>More than one grid can be loaded at the same time, for instance in the case where
 a better geoid model than the global is available for a certain area. Here the
 gridshift is set up so that the local DVR90 geoid model takes precedence over
 the global model:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>+vgridshift +grids=@dvr90.gtx,egm96_16.gtx
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+vgridshift +grids=@dvr90.gtx,egm96_16.gtx
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">&#64;</span></code> in the above example states that the grid is optional, in case the grid
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> in the above example states that the grid is optional, in case the grid
 is not found in the PROJ search path. The list of grids is prioritized so that
 grids in the start of the list takes precedence over the grids in the back of the
 list.</p>
 <p>PROJ supports the GTX file format for vertical grid corrections. Details
 about all the format can be found in the GDAL documentation. GDAL both reads and
 writes the format. Using GDAL for construction of new grids is recommended.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-arg-grids">
+<code class="descname">+grids</code><code class="descclassname">=&lt;list&gt;</code><a class="headerlink" href="#cmdoption-arg-grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Comma-separated list of grids to load. If a grid is prefixed by an <cite>&#64;</cite> the
+grid is consideres optional and PROJ will the not complain if the grid is
+not available.</p>
+<p>Grids are expected to be in GTX format.</p>
+</dd></dl>
+
+</div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -253,11 +259,11 @@ writes the format. Using GDAL for construction of new grids is recommended.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -276,6 +282,7 @@ writes the format. Using GDAL for construction of new grids is recommended.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -285,7 +292,7 @@ writes the format. Using GDAL for construction of new grids is recommended.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -294,14 +301,13 @@ writes the format. Using GDAL for construction of new grids is recommended.</p>
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

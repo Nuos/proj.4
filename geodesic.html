@@ -25,28 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Development" href="development/index.html"/>
-        <link rel="prev" title="Resource files" href="resource_files.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development" href="development/index.html" />
+    <link rel="prev" title="Resource files" href="resource_files.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -124,7 +116,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">PROJ.4</a>
@@ -132,9 +124,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -191,18 +184,18 @@
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Consider an ellipsoid of revolution with equatorial radius <span class="math">\(a\)</span>, polar
-semi-axis <span class="math">\(b\)</span>, and flattening <span class="math">\(f=(a-b)/a\)</span>.  Points on
-the surface of the ellipsoid are characterized by their latitude <span class="math">\(\phi\)</span>
-and longitude <span class="math">\(\lambda\)</span>.  (Note that latitude here means the
+<p>Consider an ellipsoid of revolution with equatorial radius <span class="math notranslate nohighlight">\(a\)</span>, polar
+semi-axis <span class="math notranslate nohighlight">\(b\)</span>, and flattening <span class="math notranslate nohighlight">\(f=(a-b)/a\)</span>.  Points on
+the surface of the ellipsoid are characterized by their latitude <span class="math notranslate nohighlight">\(\phi\)</span>
+and longitude <span class="math notranslate nohighlight">\(\lambda\)</span>.  (Note that latitude here means the
 <em>geographical latitude</em>, the angle between the normal to the ellipsoid
 and the equatorial plane).</p>
 <p>The shortest path between two points on the ellipsoid at
-<span class="math">\((\phi_1,\lambda_1)\)</span> and <span class="math">\((\phi_2,\lambda_2)\)</span>
+<span class="math notranslate nohighlight">\((\phi_1,\lambda_1)\)</span> and <span class="math notranslate nohighlight">\((\phi_2,\lambda_2)\)</span>
 is called the geodesic.  Its length is
-<span class="math">\(s_{12}\)</span> and the geodesic from point 1 to point 2 has forward
-azimuths <span class="math">\(\alpha_1\)</span> and <span class="math">\(\alpha_2\)</span> at the two end
-points.  In this figure, we have <span class="math">\(\lambda_{12}=\lambda_2-\lambda_1\)</span>.</p>
+<span class="math notranslate nohighlight">\(s_{12}\)</span> and the geodesic from point 1 to point 2 has forward
+azimuths <span class="math notranslate nohighlight">\(\alpha_1\)</span> and <span class="math notranslate nohighlight">\(\alpha_2\)</span> at the two end
+points.  In this figure, we have <span class="math notranslate nohighlight">\(\lambda_{12}=\lambda_2-\lambda_1\)</span>.</p>
 <blockquote>
 <div><center>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Geodesic_problem_on_an_ellipsoid.svg/320px-Geodesic_problem_on_an_ellipsoid.svg.png"
@@ -217,18 +210,18 @@ straightest curves on the surface.</p>
 <h2>Solution of geodesic problems<a class="headerlink" href="#solution-of-geodesic-problems" title="Permalink to this headline">¶</a></h2>
 <p>Traditionally two geodesic problems are considered:</p>
 <ul class="simple">
-<li>the direct problem — given <span class="math">\(\phi_1\)</span>,
-<span class="math">\(\lambda_1\)</span>, <span class="math">\(\alpha_1\)</span>, <span class="math">\(s_{12}\)</span>,
-determine <span class="math">\(\phi_2\)</span>, <span class="math">\(\lambda_2\)</span>, <span class="math">\(\alpha_2\)</span>.</li>
-<li>the inverse problem — given  <span class="math">\(\phi_1\)</span>,
-<span class="math">\(\lambda_1\)</span>,  <span class="math">\(\phi_2\)</span>, <span class="math">\(\lambda_2\)</span>,
-determine <span class="math">\(s_{12}\)</span>, <span class="math">\(\alpha_1\)</span>,
-<span class="math">\(\alpha_2\)</span>.</li>
+<li>the direct problem — given <span class="math notranslate nohighlight">\(\phi_1\)</span>,
+<span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(s_{12}\)</span>,
+determine <span class="math notranslate nohighlight">\(\phi_2\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>.</li>
+<li>the inverse problem — given  <span class="math notranslate nohighlight">\(\phi_1\)</span>,
+<span class="math notranslate nohighlight">\(\lambda_1\)</span>,  <span class="math notranslate nohighlight">\(\phi_2\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>,
+determine <span class="math notranslate nohighlight">\(s_{12}\)</span>, <span class="math notranslate nohighlight">\(\alpha_1\)</span>,
+<span class="math notranslate nohighlight">\(\alpha_2\)</span>.</li>
 </ul>
 <p>PROJ incorporates <a class="reference external" href="https://geographiclib.sourceforge.io/1.49/C/">C library for Geodesics</a> from <a class="reference external" href="https://geographiclib.sourceforge.io">GeographicLib</a>.  This library provides
 routines to solve the direct and inverse geodesic problems.  Full double
 precision accuracy is maintained provided that
-<span class="math">\(\lvert f\rvert&lt;\frac1{50}\)</span>.  Refer
+<span class="math notranslate nohighlight">\(\lvert f\rvert&lt;\frac1{50}\)</span>.  Refer
 to the</p>
 <blockquote>
 <div><a class="reference external" href="https://geographiclib.sourceforge.io/1.49/C/geodesic_8h.html">application programming interface</a></div></blockquote>
@@ -239,8 +232,8 @@ rest of PROJ:</p>
 <ul class="simple">
 <li>angles (latitudes, longitudes, and azimuths) are in degrees (instead
 of in radians);</li>
-<li>the shape of ellipsoid is specified by the flattening <span class="math">\(f\)</span>; this can
-be negative to denote a prolate ellipsoid; setting <span class="math">\(f=0\)</span> corresponds
+<li>the shape of ellipsoid is specified by the flattening <span class="math notranslate nohighlight">\(f\)</span>; this can
+be negative to denote a prolate ellipsoid; setting <span class="math notranslate nohighlight">\(f=0\)</span> corresponds
 to a sphere, in which case the geodesic becomes a great circle.</li>
 </ul>
 <p>PROJ also includes a command line tool, <a class="reference internal" href="apps/geod.html#geod"><span class="std std-ref">geod</span></a>(1), for performing
@@ -250,41 +243,41 @@ simple geodesic calculations.</p>
 <h2>Additional properties<a class="headerlink" href="#additional-properties" title="Permalink to this headline">¶</a></h2>
 <p>The routines also calculate several other quantities of interest</p>
 <ul class="simple">
-<li><span class="math">\(S_{12}\)</span> is the area between the geodesic from point 1 to
+<li><span class="math notranslate nohighlight">\(S_{12}\)</span> is the area between the geodesic from point 1 to
 point 2 and the equator; i.e., it is the area, measured
 counter-clockwise, of the quadrilateral with corners
-<span class="math">\((\phi_1,\lambda_1)\)</span>, <span class="math">\((0,\lambda_1)\)</span>,
-<span class="math">\((0,\lambda_2)\)</span>, and
-<span class="math">\((\phi_2,\lambda_2)\)</span>.  It is given in
+<span class="math notranslate nohighlight">\((\phi_1,\lambda_1)\)</span>, <span class="math notranslate nohighlight">\((0,\lambda_1)\)</span>,
+<span class="math notranslate nohighlight">\((0,\lambda_2)\)</span>, and
+<span class="math notranslate nohighlight">\((\phi_2,\lambda_2)\)</span>.  It is given in
 meters<sup>2</sup>.</li>
-<li><span class="math">\(m_{12}\)</span>, the reduced length of the geodesic is defined such
-that if the initial azimuth is perturbed by <span class="math">\(d\alpha_1\)</span>
-(radians) then the second point is displaced by <span class="math">\(m_{12}\,d\alpha_1\)</span>
+<li><span class="math notranslate nohighlight">\(m_{12}\)</span>, the reduced length of the geodesic is defined such
+that if the initial azimuth is perturbed by <span class="math notranslate nohighlight">\(d\alpha_1\)</span>
+(radians) then the second point is displaced by <span class="math notranslate nohighlight">\(m_{12}\,d\alpha_1\)</span>
 in the direction perpendicular to the
-geodesic.  <span class="math">\(m_{12}\)</span> is given in meters.  On a curved surface
-the reduced length obeys a symmetry relation, <span class="math">\(m_{12}+m_{21}=0\)</span>.
-On a flat surface, we have <span class="math">\(m_{12}=s_{12}\)</span>.</li>
-<li><span class="math">\(M_{12}\)</span> and <span class="math">\(M_{21}\)</span> are geodesic scales.  If two
+geodesic.  <span class="math notranslate nohighlight">\(m_{12}\)</span> is given in meters.  On a curved surface
+the reduced length obeys a symmetry relation, <span class="math notranslate nohighlight">\(m_{12}+m_{21}=0\)</span>.
+On a flat surface, we have <span class="math notranslate nohighlight">\(m_{12}=s_{12}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(M_{12}\)</span> and <span class="math notranslate nohighlight">\(M_{21}\)</span> are geodesic scales.  If two
 geodesics are parallel at point 1 and separated by a small distance
-:math`dt`, then they are separated by a distance <span class="math">\(M_{12}\,dt\)</span> at
-point 2.  <span class="math">\(M_{21}\)</span> is defined similarly (with the geodesics
-being parallel to one another at point 2).  <span class="math">\(M_{12}\)</span> and
-<span class="math">\(M_{21}\)</span> are dimensionless quantities.  On a flat surface,
-we have <span class="math">\(M_{12}=M_{21}=1\)</span>.</li>
-<li><span class="math">\(\sigma_{12}\)</span> is the arc length on the auxiliary sphere.
+:math`dt`, then they are separated by a distance <span class="math notranslate nohighlight">\(M_{12}\,dt\)</span> at
+point 2.  <span class="math notranslate nohighlight">\(M_{21}\)</span> is defined similarly (with the geodesics
+being parallel to one another at point 2).  <span class="math notranslate nohighlight">\(M_{12}\)</span> and
+<span class="math notranslate nohighlight">\(M_{21}\)</span> are dimensionless quantities.  On a flat surface,
+we have <span class="math notranslate nohighlight">\(M_{12}=M_{21}=1\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\sigma_{12}\)</span> is the arc length on the auxiliary sphere.
 This is a construct for converting the problem to one in spherical
 trigonometry.  The spherical arc length from one equator crossing to
-the next is always <span class="math">\(180^\circ\)</span>.</li>
+the next is always <span class="math notranslate nohighlight">\(180^\circ\)</span>.</li>
 </ul>
 <p>If points 1, 2, and 3 lie on a single geodesic, then the following
 addition rules hold:</p>
 <ul class="simple">
-<li><span class="math">\(s_{13}=s_{12}+s_{23}\)</span>,</li>
-<li><span class="math">\(\sigma_{13}=\sigma_{12}+\sigma_{23}\)</span>,</li>
-<li><span class="math">\(S_{13}=S_{12}+S_{23}\)</span>,</li>
-<li><span class="math">\(m_{13}=m_{12}M_{23}+m_{23}M_{21}\)</span>,</li>
-<li><span class="math">\(M_{13}=M_{12}M_{23}-(1-M_{12}M_{21})m_{23}/m_{12}\)</span>,</li>
-<li><span class="math">\(M_{31}=M_{32}M_{21}-(1-M_{23}M_{32})m_{12}/m_{23}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(s_{13}=s_{12}+s_{23}\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(\sigma_{13}=\sigma_{12}+\sigma_{23}\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(S_{13}=S_{12}+S_{23}\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(m_{13}=m_{12}M_{23}+m_{23}M_{21}\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(M_{13}=M_{12}M_{23}-(1-M_{12}M_{21})m_{23}/m_{12}\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(M_{31}=M_{32}M_{21}-(1-M_{23}M_{32})m_{12}/m_{23}\)</span>.</li>
 </ul>
 </div>
 <div class="section" id="multiple-shortest-geodesics">
@@ -294,33 +287,33 @@ addition rules hold:</p>
 multiple azimuths which yield the same shortest distance.  Here is a
 catalog of those cases:</p>
 <ul class="simple">
-<li><span class="math">\(\phi_1=-\phi_2\)</span> (with neither point at
-a pole).  If <span class="math">\(\alpha_1=\alpha_2\)</span>, the geodesic
+<li><span class="math notranslate nohighlight">\(\phi_1=-\phi_2\)</span> (with neither point at
+a pole).  If <span class="math notranslate nohighlight">\(\alpha_1=\alpha_2\)</span>, the geodesic
 is unique.  Otherwise there are two geodesics and the second one is
 obtained by setting
-<span class="math">\([\alpha_1,\alpha_2]\leftarrow[\alpha_2,\alpha_1]\)</span>,
-<span class="math">\([M_{12},M_{21}]\leftarrow[M_{21},M_{12}]\)</span>,
-<span class="math">\(S_{12}\leftarrow-S_{12}\)</span>.
-(This occurs when the longitude difference is near <span class="math">\(\pm180^\circ\)</span>
+<span class="math notranslate nohighlight">\([\alpha_1,\alpha_2]\leftarrow[\alpha_2,\alpha_1]\)</span>,
+<span class="math notranslate nohighlight">\([M_{12},M_{21}]\leftarrow[M_{21},M_{12}]\)</span>,
+<span class="math notranslate nohighlight">\(S_{12}\leftarrow-S_{12}\)</span>.
+(This occurs when the longitude difference is near <span class="math notranslate nohighlight">\(\pm180^\circ\)</span>
 for oblate ellipsoids.)</li>
-<li><span class="math">\(\lambda_2=\lambda_1\pm180^\circ\)</span> (with
-neither point at a pole).  If <span class="math">\(\alpha_1=0^\circ\)</span> or
-<span class="math">\(\pm180^\circ\)</span>, the geodesic is unique.  Otherwise there are two
+<li><span class="math notranslate nohighlight">\(\lambda_2=\lambda_1\pm180^\circ\)</span> (with
+neither point at a pole).  If <span class="math notranslate nohighlight">\(\alpha_1=0^\circ\)</span> or
+<span class="math notranslate nohighlight">\(\pm180^\circ\)</span>, the geodesic is unique.  Otherwise there are two
 geodesics and the second one is obtained by setting
-<span class="math">\([\alpha_1,\alpha_2]\leftarrow[-\alpha_1,-\alpha_2]\)</span>,
-<span class="math">\(S_{12}\leftarrow-S_{12}\)</span>.  (This occurs when
-<span class="math">\(\phi_2\)</span> is near <span class="math">\(-\phi_1\)</span> for prolate
+<span class="math notranslate nohighlight">\([\alpha_1,\alpha_2]\leftarrow[-\alpha_1,-\alpha_2]\)</span>,
+<span class="math notranslate nohighlight">\(S_{12}\leftarrow-S_{12}\)</span>.  (This occurs when
+<span class="math notranslate nohighlight">\(\phi_2\)</span> is near <span class="math notranslate nohighlight">\(-\phi_1\)</span> for prolate
 ellipsoids.)</li>
 <li>Points 1 and 2 at opposite poles.  There are infinitely many
 geodesics which can be generated by setting
-<span class="math">\([\alpha_1,\alpha_2]\leftarrow[\alpha_1,\alpha_2]+[\delta,-\delta]\)</span>,
-for arbitrary <span class="math">\(\delta\)</span>.
+<span class="math notranslate nohighlight">\([\alpha_1,\alpha_2]\leftarrow[\alpha_1,\alpha_2]+[\delta,-\delta]\)</span>,
+for arbitrary <span class="math notranslate nohighlight">\(\delta\)</span>.
 (For spheres, this prescription applies when points 1 and 2 are
 antipodal.)</li>
-<li><span class="math">\(s_{12}=0\)</span> (coincident points).  There are infinitely many
+<li><span class="math notranslate nohighlight">\(s_{12}=0\)</span> (coincident points).  There are infinitely many
 geodesics which can be generated by setting
-<span class="math">\([\alpha_1,\alpha_2]\leftarrow[\alpha_1,\alpha_2]+[\delta,\delta]\)</span>,
-for arbitrary <span class="math">\(\delta\)</span>.</li>
+<span class="math notranslate nohighlight">\([\alpha_1,\alpha_2]\leftarrow[\alpha_1,\alpha_2]+[\delta,\delta]\)</span>,
+for arbitrary <span class="math notranslate nohighlight">\(\delta\)</span>.</li>
 </ul>
 </div>
 <div class="section" id="background">
@@ -333,7 +326,7 @@ areas is based on <a class="reference internal" href="references.html#danielsen1
 <li>The results are accurate to round-off for terrestrial ellipsoids (the
 error in the distance is less then 15 nanometers, compared to 0.1 mm
 for Vincenty).</li>
-<li>The solution of the inverse problem is always found.  (Vincenty&#8217;s
+<li>The solution of the inverse problem is always found.  (Vincenty’s
 method fails to converge for nearly antipodal points.)</li>
 <li>The routines calculate differential and integral properties of a
 geodesic.  This allows, for example, the area of a geodesic polygon to
@@ -346,9 +339,7 @@ be computed.</li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -367,11 +358,11 @@ be computed.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -390,6 +381,7 @@ be computed.</li>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -399,7 +391,7 @@ be computed.</li>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -408,14 +400,13 @@ be computed.</li>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

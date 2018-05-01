@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Using PROJ" href="index.html"/>
-        <link rel="next" title="Geodetic transformation" href="transformation.html"/>
-        <link rel="prev" title="Quick start" href="quickstart.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Geodetic transformation" href="transformation.html" />
+    <link rel="prev" title="Quick start" href="quickstart.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -131,7 +122,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -139,9 +130,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -215,7 +207,7 @@ documenting the individual <a class="reference internal" href="../operations/pro
 <td>Semiminor radius of the ellipsoid axis</td>
 </tr>
 <tr class="row-odd"><td>+ellps</td>
-<td>Ellipsoid name (see <code class="docutils literal"><span class="pre">proj</span> <span class="pre">-le</span></code>)</td>
+<td>Ellipsoid name (see <code class="docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code>)</td>
 </tr>
 <tr class="row-even"><td>+k</td>
 <td>Scaling factor (deprecated)</td>
@@ -233,7 +225,7 @@ documenting the individual <a class="reference internal" href="../operations/pro
 <td>Center longitude to use for wrapping (see below)</td>
 </tr>
 <tr class="row-odd"><td>+no_defs</td>
-<td>Don&#8217;t use the /usr/share/proj/proj_def.dat defaults file</td>
+<td>Don’t use the /usr/share/proj/proj_def.dat defaults file</td>
 </tr>
 <tr class="row-even"><td>+over</td>
 <td>Allow longitude output outside -180 to 180 range, disables
@@ -243,7 +235,7 @@ wrapping (see below)</td>
 <td>Alternate prime meridian (typically a city name, see below)</td>
 </tr>
 <tr class="row-even"><td>+proj</td>
-<td>Projection name (see <code class="docutils literal"><span class="pre">proj</span> <span class="pre">-l</span></code>)</td>
+<td>Projection name (see <code class="docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-l</span></code>)</td>
 </tr>
 <tr class="row-odd"><td>+units</td>
 <td>meters, US survey feet, etc.</td>
@@ -263,60 +255,60 @@ wrapping (see below)</td>
 <p>In the sections below most of the parameters are explained in details.</p>
 <div class="section" id="units">
 <h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
-<p>Horizontal units can be specified using the <code class="docutils literal"><span class="pre">+units</span></code> keyword with a symbolic
-name for a unit (ie. <code class="docutils literal"><span class="pre">us-ft</span></code>).  Alternatively the translation to meters can be
-specified with the <code class="docutils literal"><span class="pre">+to_meter</span></code> keyword (ie. 0.304800609601219 for US feet).  The
-<code class="docutils literal"><span class="pre">-lu</span></code> argument to <code class="docutils literal"><span class="pre">cs2cs</span></code> or <code class="docutils literal"><span class="pre">proj</span></code> can be used to list symbolic unit names.
+<p>Horizontal units can be specified using the <code class="docutils literal notranslate"><span class="pre">+units</span></code> keyword with a symbolic
+name for a unit (ie. <code class="docutils literal notranslate"><span class="pre">us-ft</span></code>).  Alternatively the translation to meters can be
+specified with the <code class="docutils literal notranslate"><span class="pre">+to_meter</span></code> keyword (ie. 0.304800609601219 for US feet).  The
+<code class="docutils literal notranslate"><span class="pre">-lu</span></code> argument to <code class="docutils literal notranslate"><span class="pre">cs2cs</span></code> or <code class="docutils literal notranslate"><span class="pre">proj</span></code> can be used to list symbolic unit names.
 The default unit for projected coordinates is the meter.
 A few special projections deviate from this behaviour, most notably the
 latlong pseudo-projection that returns degrees.</p>
-<p>Vertical (Z) units can be specified using the <code class="docutils literal"><span class="pre">+vunits</span></code> keyword with a
-symbolic name for a unit (ie. <code class="docutils literal"><span class="pre">us-ft</span></code>).  Alternatively the translation to
-meters can be specified with the <code class="docutils literal"><span class="pre">+vto_meter</span></code> keyword (ie. 0.304800609601219
-for US feet).  The <code class="docutils literal"><span class="pre">-lu</span></code> argument to <code class="docutils literal"><span class="pre">cs2cs</span></code> or <code class="docutils literal"><span class="pre">proj</span></code> can be used to list
+<p>Vertical (Z) units can be specified using the <code class="docutils literal notranslate"><span class="pre">+vunits</span></code> keyword with a
+symbolic name for a unit (ie. <code class="docutils literal notranslate"><span class="pre">us-ft</span></code>).  Alternatively the translation to
+meters can be specified with the <code class="docutils literal notranslate"><span class="pre">+vto_meter</span></code> keyword (ie. 0.304800609601219
+for US feet).  The <code class="docutils literal notranslate"><span class="pre">-lu</span></code> argument to <code class="docutils literal notranslate"><span class="pre">cs2cs</span></code> or <code class="docutils literal notranslate"><span class="pre">proj</span></code> can be used to list
 symbolic unit names.  If no vertical units are specified, the vertical units will
 default to be the same as the horizontal coordinates.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">proj</span></code> do not handle vertical units at all and hence the <code class="docutils literal"><span class="pre">+vto_meter</span></code>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">proj</span></code> do not handle vertical units at all and hence the <code class="docutils literal notranslate"><span class="pre">+vto_meter</span></code>
 argument will be ignored.</p>
 </div>
-<p>Scaling of output units can be done by applying the <code class="docutils literal"><span class="pre">+k_0</span></code> argument. The
-returned coordinates are scaled by the value assigned with the <code class="docutils literal"><span class="pre">+k_0</span></code>
+<p>Scaling of output units can be done by applying the <code class="docutils literal notranslate"><span class="pre">+k_0</span></code> argument. The
+returned coordinates are scaled by the value assigned with the <code class="docutils literal notranslate"><span class="pre">+k_0</span></code>
 parameter.</p>
 </div>
 <div class="section" id="false-easting-northing">
 <h2>False Easting/Northing<a class="headerlink" href="#false-easting-northing" title="Permalink to this headline">¶</a></h2>
 <p>Virtually all coordinate systems allow for the presence of a false easting
-(<code class="docutils literal"><span class="pre">+x_0</span></code>) and northing (<code class="docutils literal"><span class="pre">+y_0</span></code>).  Note that these values are always expressed in
+(<code class="docutils literal notranslate"><span class="pre">+x_0</span></code>) and northing (<code class="docutils literal notranslate"><span class="pre">+y_0</span></code>).  Note that these values are always expressed in
 meters even if the coordinate system is some other units.  Some coordinate
 systems (such as UTM) have implicit false easting and northing values.</p>
 </div>
 <div class="section" id="longitude-wrapping">
 <h2>Longitude Wrapping<a class="headerlink" href="#longitude-wrapping" title="Permalink to this headline">¶</a></h2>
-<p>By default PROJ wraps output longitudes in the range -180 to 180.  The <code class="docutils literal"><span class="pre">+over</span></code>
+<p>By default PROJ wraps output longitudes in the range -180 to 180.  The <code class="docutils literal notranslate"><span class="pre">+over</span></code>
 switch can be used to disable the default wrapping which is done at a low level
-in <code class="docutils literal"><span class="pre">pj_inv()</span></code>.  This is particularly useful with projections like the
+in <code class="docutils literal notranslate"><span class="pre">pj_inv()</span></code>.  This is particularly useful with projections like the
 <a class="reference internal" href="../operations/projections/eqc.html"><span class="doc">equidistant cylindrical</span></a>
 where it would be desirable for X values past -20000000 (roughly) to continue
 past -180 instead of wrapping to +180.</p>
-<p>The <code class="docutils literal"><span class="pre">+lon_wrap</span></code> option can be used to provide an alternative means of doing
-longitude wrapping within <code class="docutils literal"><span class="pre">pj_transform()</span></code>.  The argument to this option is a
-center longitude.  So <code class="docutils literal"><span class="pre">+lon_wrap=180</span></code> means wrap longitudes in the range 0 to
-360.  Note that <code class="docutils literal"><span class="pre">+over</span></code> does <strong>not</strong> disable <code class="docutils literal"><span class="pre">+lon_wrap</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">+lon_wrap</span></code> option can be used to provide an alternative means of doing
+longitude wrapping within <code class="docutils literal notranslate"><span class="pre">pj_transform()</span></code>.  The argument to this option is a
+center longitude.  So <code class="docutils literal notranslate"><span class="pre">+lon_wrap=180</span></code> means wrap longitudes in the range 0 to
+360.  Note that <code class="docutils literal notranslate"><span class="pre">+over</span></code> does <strong>not</strong> disable <code class="docutils literal notranslate"><span class="pre">+lon_wrap</span></code>.</p>
 </div>
 <div class="section" id="prime-meridian">
 <h2>Prime Meridian<a class="headerlink" href="#prime-meridian" title="Permalink to this headline">¶</a></h2>
 <p>A prime meridian may be declared indicating the offset between the prime
 meridian of the declared coordinate system and that of greenwich.  A prime
-meridian is declared using the &#8220;pm&#8221; parameter, and may be assigned a symbolic
+meridian is declared using the “pm” parameter, and may be assigned a symbolic
 name, or the longitude of the alternative prime meridian relative to greenwich.</p>
 <p>Currently prime meridian declarations are only utilized by the
-<code class="docutils literal"><span class="pre">pj_transform()</span></code> API call, not the <code class="docutils literal"><span class="pre">pj_inv()</span></code> and <code class="docutils literal"><span class="pre">pj_fwd()</span></code> calls.
-Consequently the user utility <code class="docutils literal"><span class="pre">cs2cs</span></code> does honour prime meridians but the
-<code class="docutils literal"><span class="pre">proj</span></code> user utility ignores them.</p>
+<code class="docutils literal notranslate"><span class="pre">pj_transform()</span></code> API call, not the <code class="docutils literal notranslate"><span class="pre">pj_inv()</span></code> and <code class="docutils literal notranslate"><span class="pre">pj_fwd()</span></code> calls.
+Consequently the user utility <code class="docutils literal notranslate"><span class="pre">cs2cs</span></code> does honour prime meridians but the
+<code class="docutils literal notranslate"><span class="pre">proj</span></code> user utility ignores them.</p>
 <p>The following predeclared prime meridian names are supported.  These can be
-listed using with <code class="docutils literal"><span class="pre">cs2cs</span> <span class="pre">-lm</span></code>.</p>
+listed using with <code class="docutils literal notranslate"><span class="pre">cs2cs</span> <span class="pre">-lm</span></code>.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -333,48 +325,48 @@ listed using with <code class="docutils literal"><span class="pre">cs2cs</span> 
 <td>0dE</td>
 </tr>
 <tr class="row-odd"><td>lisbon</td>
-<td>9d07&#8216;54.862&#8221;W</td>
+<td>9d07‘54.862”W</td>
 </tr>
 <tr class="row-even"><td>paris</td>
-<td>2d20&#8216;14.025&#8221;E</td>
+<td>2d20‘14.025”E</td>
 </tr>
 <tr class="row-odd"><td>bogota</td>
-<td>74d04&#8216;51.3&#8221;E</td>
+<td>74d04‘51.3”E</td>
 </tr>
 <tr class="row-even"><td>madrid</td>
-<td>3d41&#8216;16.48&#8221;W</td>
+<td>3d41‘16.48”W</td>
 </tr>
 <tr class="row-odd"><td>rome</td>
-<td>12d27&#8216;8.4&#8221;E</td>
+<td>12d27‘8.4”E</td>
 </tr>
 <tr class="row-even"><td>bern</td>
-<td>7d26&#8216;22.5&#8221;E</td>
+<td>7d26‘22.5”E</td>
 </tr>
 <tr class="row-odd"><td>jakarta</td>
-<td>106d48&#8216;27.79&#8221;E</td>
+<td>106d48‘27.79”E</td>
 </tr>
 <tr class="row-even"><td>ferro</td>
-<td>17d40&#8217;W</td>
+<td>17d40’W</td>
 </tr>
 <tr class="row-odd"><td>brussels</td>
-<td>4d22&#8216;4.71&#8221;E</td>
+<td>4d22‘4.71”E</td>
 </tr>
 <tr class="row-even"><td>stockholm</td>
-<td>18d3&#8216;29.8&#8221;E</td>
+<td>18d3‘29.8”E</td>
 </tr>
 <tr class="row-odd"><td>athens</td>
-<td>23d42&#8216;58.815&#8221;E</td>
+<td>23d42‘58.815”E</td>
 </tr>
 <tr class="row-even"><td>oslo</td>
-<td>10d43&#8216;22.5&#8221;E</td>
+<td>10d43‘22.5”E</td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
-<p>Example of use.  The location <code class="docutils literal"><span class="pre">long=0</span></code>, <code class="docutils literal"><span class="pre">lat=0</span></code> in the greenwich based lat/long
+<p>Example of use.  The location <code class="docutils literal notranslate"><span class="pre">long=0</span></code>, <code class="docutils literal notranslate"><span class="pre">lat=0</span></code> in the greenwich based lat/long
 coordinates is translated to lat/long coordinates with Madrid as the prime
 meridian.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84 +to +proj=latlong +datum=WGS84 +pm=madrid
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cs2cs +proj=latlong +datum=WGS84 +to +proj=latlong +datum=WGS84 +pm=madrid
 0 0                           &lt;i&gt;(input)&lt;/i&gt;
 3d41&#39;16.48&quot;E    0dN 0.000     &lt;i&gt;(output)&lt;/i&gt;
 </pre></div>
@@ -383,28 +375,28 @@ meridian.</p>
 <div class="section" id="axis-orientation">
 <h2>Axis orientation<a class="headerlink" href="#axis-orientation" title="Permalink to this headline">¶</a></h2>
 <p>Starting in PROJ 4.8.0, the +axis argument can be used to control the axis
-orientation of the coordinate system.  The default orientation is &#8220;easting,
-northing, up&#8221; but directions can be flipped, or axes flipped using combinations
+orientation of the coordinate system.  The default orientation is “easting,
+northing, up” but directions can be flipped, or axes flipped using combinations
 of the axes in the +axis switch.  The values are:</p>
 <ul class="simple">
-<li>&#8220;e&#8221; - Easting</li>
-<li>&#8220;w&#8221; - Westing</li>
-<li>&#8220;n&#8221; - Northing</li>
-<li>&#8220;s&#8221; - Southing</li>
-<li>&#8220;u&#8221; - Up</li>
-<li>&#8220;d&#8221; - Down</li>
+<li>“e” - Easting</li>
+<li>“w” - Westing</li>
+<li>“n” - Northing</li>
+<li>“s” - Southing</li>
+<li>“u” - Up</li>
+<li>“d” - Down</li>
 </ul>
 <p>They can be combined in +axis in forms like:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">+axis=enu</span></code> - the default easting, northing, elevation.</li>
-<li><code class="docutils literal"><span class="pre">+axis=neu</span></code> - northing, easting, up - useful for &#8220;lat/long&#8221; geographic
+<li><code class="docutils literal notranslate"><span class="pre">+axis=enu</span></code> - the default easting, northing, elevation.</li>
+<li><code class="docutils literal notranslate"><span class="pre">+axis=neu</span></code> - northing, easting, up - useful for “lat/long” geographic
 coordinates, or south orientated transverse mercator.</li>
-<li><code class="docutils literal"><span class="pre">+axis=wnu</span></code> - westing, northing, up - some planetary coordinate systems
-have &#8220;west positive&#8221; coordinate systems</li>
+<li><code class="docutils literal notranslate"><span class="pre">+axis=wnu</span></code> - westing, northing, up - some planetary coordinate systems
+have “west positive” coordinate systems</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal"><span class="pre">+axis</span></code> argument does not work with the <code class="docutils literal"><span class="pre">proj</span></code> command line
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">+axis</span></code> argument does not work with the <code class="docutils literal notranslate"><span class="pre">proj</span></code> command line
 utility.</p>
 </div>
 </div>
@@ -412,9 +404,7 @@ utility.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -433,11 +423,11 @@ utility.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -456,6 +446,7 @@ utility.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -465,7 +456,7 @@ utility.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -474,14 +465,13 @@ utility.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

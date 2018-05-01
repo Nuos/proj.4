@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="Applications" href="index.html"/>
-        <link rel="next" title="cct" href="cct.html"/>
-        <link rel="prev" title="Applications" href="index.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cct" href="cct.html" />
+    <link rel="prev" title="Applications" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -130,7 +121,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PROJ.4</a>
@@ -138,9 +129,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -198,7 +190,7 @@
 transformation  of cartographic data to or from cartesian data  with  a  wide
 range  of selectable projection functions.</p>
 <p><strong class="program">invproj</strong> may not be available on all  platforms;  in  this  case
-use <a class="reference internal" href="#id2"><code class="xref std std-option docutils literal"><span class="pre">proj</span> <span class="pre">-I</span></code></a> instead.</p>
+use <a class="reference internal" href="#id2"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-I</span></code></a> instead.</p>
 <p>The  following  control parameters can appear in any order</p>
 <dl class="option">
 <dt id="cmdoption-proj-b">
@@ -212,7 +204,7 @@ and allows bypassing formatting operations.</p>
 <dl class="option">
 <dt id="cmdoption-proj-i">
 <code class="descname">-i</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selects binary input only (see <a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal"><span class="pre">-b</span></code></a>).</p>
+<dd><p>Selects binary input only (see <a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal notranslate"><span class="pre">-b</span></code></a>).</p>
 </dd></dl>
 
 <dl class="option">
@@ -225,12 +217,12 @@ invproj.</p>
 <dl class="option">
 <dt id="cmdoption-proj-o">
 <code class="descname">-o</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-o" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selects binary output only (see <a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal"><span class="pre">-b</span></code></a>).</p>
+<dd><p>Selects binary output only (see <a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal notranslate"><span class="pre">-b</span></code></a>).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-proj-t">
-<code class="descname">-t</code><code class="descclassname">&lt;a&gt;</code><a class="headerlink" href="#cmdoption-proj-t" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-proj-t-a">
+<code class="descname">-t&lt;a&gt;</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-t-a" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>a</em> specifies a character employed as the first character to denote a
 control line to be passed through without  processing. This  option
 applicable to ascii input only. (# is the default value).</p>
@@ -241,7 +233,7 @@ applicable to ascii input only. (# is the default value).</p>
 <code class="descname">-e</code><code class="descclassname"> &lt;string&gt;</code><a class="headerlink" href="#cmdoption-proj-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>String is an arbitrary string to be output if an error is detected during
 data transformations. The default value is: <em>t</em>. Note that if the
-<a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal"><span class="pre">-b</span></code></a>, <a class="reference internal" href="#cmdoption-proj-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> or <a class="reference internal" href="#cmdoption-proj-o"><code class="xref std std-option docutils literal"><span class="pre">-o</span></code></a> options are employed, an error
+<a class="reference internal" href="#cmdoption-proj-b"><code class="xref std std-option docutils literal notranslate"><span class="pre">-b</span></code></a>, <a class="reference internal" href="#cmdoption-proj-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a> or <a class="reference internal" href="#cmdoption-proj-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a> options are employed, an error
 is returned as HUGE_VAL value for both return values.</p>
 </dd></dl>
 
@@ -254,16 +246,16 @@ printing the converted values.</p>
 
 <dl class="option">
 <dt id="cmdoption-proj-l">
-<code class="descname">-l</code><code class="descclassname">&lt;[=id]&gt;</code><a class="headerlink" href="#cmdoption-proj-l" title="Permalink to this definition">¶</a></dt>
-<dd><p>List projection identifiers that can be selected with <em>+proj</em>. <code class="docutils literal"><span class="pre">proj</span> <span class="pre">-l=id</span></code>
-gives expanded description of projection id, e.g. <code class="docutils literal"><span class="pre">proj</span> <span class="pre">-l=merc</span></code>.</p>
+<code class="descname">-l&lt;[</code><code class="descclassname">=id]&gt;</code><a class="headerlink" href="#cmdoption-proj-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>List projection identifiers that can be selected with <em>+proj</em>. <code class="docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-l=id</span></code>
+gives expanded description of projection id, e.g. <code class="docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-l=merc</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-proj-lp">
 <code class="descname">-lp</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-lp" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of all projection id that can be used with the <em>+proj</em> parameter.
-Equivalent to <code class="docutils literal"><span class="pre">proj</span> <span class="pre">-l</span></code>.</p>
+Equivalent to <code class="docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-l</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -330,15 +322,15 @@ reciprocal value of mult is employed.</p>
 <code class="descname">-f</code><code class="descclassname"> &lt;format&gt;</code><a class="headerlink" href="#cmdoption-proj-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format is a printf format string to control the form of the output values.
 For inverse projections, the output will be in degrees when this option is
-employed.  The  default format is &#8220;%.2f&#8221; for forward projection and DMS for
+employed.  The  default format is “%.2f” for forward projection and DMS for
 inverse.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-proj">
-<code class="descname">-</code><code class="descclassname">[w|W]&lt;n&gt;</code><a class="headerlink" href="#cmdoption-proj" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-proj-w-w-n">
+<code class="descname">-[w|W]&lt;n&gt;</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-w-w-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>N is the number of significant fractional digits to employ for seconds
-output (when the  option  is  not  specified, <code class="docutils literal"><span class="pre">-w3</span></code> is assumed). When <code class="docutils literal"><span class="pre">-W</span></code>
+output (when the  option  is  not  specified, <code class="docutils literal notranslate"><span class="pre">-w3</span></code> is assumed). When <code class="docutils literal notranslate"><span class="pre">-W</span></code>
 is employed the fields will be constant width and  with  leading zeroes.</p>
 </dd></dl>
 
@@ -347,19 +339,19 @@ is employed the fields will be constant width and  with  leading zeroes.</p>
 <code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-proj-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>causes a listing of cartographic control parameters tested for and used by
 the program to be printed prior to input data. Should not be used with the
-<a class="reference internal" href="#id7"><code class="xref std std-option docutils literal"><span class="pre">-T</span></code></a> option.</p>
+<a class="reference internal" href="#cmdoption-proj-t"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> option.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="id6">
 <code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option causes an expanded annotated listing of the characteristics of
-the projected point. <a class="reference internal" href="#cmdoption-proj-v"><code class="xref std std-option docutils literal"><span class="pre">-v</span></code></a> is implied with this option.</p>
+the projected point. <a class="reference internal" href="#cmdoption-proj-v"><code class="xref std std-option docutils literal notranslate"><span class="pre">-v</span></code></a> is implied with this option.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id7">
-<code class="descname">-T</code><code class="descclassname"> &lt;ulow,uhi,vlow,vhi,res[,umax,vmax]&gt;</code><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-proj-t">
+<code class="descname">-T</code><code class="descclassname"> &lt;ulow,uhi,vlow,vhi,res[,umax,vmax]&gt;</code><a class="headerlink" href="#cmdoption-proj-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option creates a set of bivariate Chebyshev polynomial coefficients
 that approximate the selected  cartographic projection on stdout. The values
 low and hi denote the range of the input where the u or v prefixes apply to
@@ -375,13 +367,13 @@ Additional projection control parameters may  be contained  in  two  auxiliary
 control files: the first  is   optionally   referenced   with   the
 <em>+init=file:id</em> and the second is always processed after the name of the
 projection has been established from either the run-line or the contents of
-+init  file.   The   environment   parameter <span class="target" id="index-1"></span><a class="reference internal" href="../usage/environmentvars.html#envvar-PROJ_LIB"><code class="xref std std-envvar docutils literal"><span class="pre">PROJ_LIB</span></code></a> establishes the
++init  file.   The   environment   parameter <span class="target" id="index-1"></span><a class="reference internal" href="../usage/environmentvars.html#envvar-PROJ_LIB"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PROJ_LIB</span></code></a> establishes the
 default directory for a file reference without an absolute  path.   This is
 also  used  for  supporting files like datum shift files.</p>
 <p>Usage of <em>+args</em> varies with projection and for a complete description
 consult the <a class="reference internal" href="../operations/projections/index.html#projections"><span class="std std-ref">projection pages</span></a>.</p>
 <p>One or more files (processed in  left  to  right order)  specify  the source of
-data to be transformed.  A <code class="docutils literal"><span class="pre">-</span></code> will specify the location  of  processing standard
+data to be transformed.  A <code class="docutils literal notranslate"><span class="pre">-</span></code> will specify the location  of  processing standard
 input.  If no files are specified, the input is assumed  to  be  from  stdin.
 For ASCII input data the two data values must be in the first two white  space
 separated  fields and  when  both  input  and output are ASCII all trailing
@@ -389,13 +381,13 @@ portions of the input line are appended to the output line.</p>
 <p>Input  geographic  data (longitude and latitude) must be in DMS format and input
 cartesian  data must  be  in units consistent with the ellipsoid major axis or
 sphere radius units.  Output geographic  coordinates  will  be in DMS (if the
-<code class="docutils literal"><span class="pre">-w</span></code> switch is not employed) and  precise  to  0.001&#8221; with  trailing, zero-valued
+<code class="docutils literal notranslate"><span class="pre">-w</span></code> switch is not employed) and  precise  to  0.001” with  trailing, zero-valued
 minute-second fields deleted.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The following script</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">proj +proj=utm  +lon_0=112w  +ellps=clrk66</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">proj +proj=utm  +lon_0=112w  +ellps=clrk66</span>
 <span class="go">-r &lt;&lt;EOF</span>
 <span class="go">45d15&#39;33.1&quot;   111.5W</span>
 <span class="go">45d15.551666667N   -111d30</span>
@@ -407,7 +399,7 @@ minute-second fields deleted.</p>
 nearest  longitude 112W.  The geographic values of this example are equivalent
 and  meant  as  examples  of  various forms  of  DMS  input.  The x-y output
 data will appear as three lines of:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>460769.27     5011648.45
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>460769.27     5011648.45
 </pre></div>
 </div>
 </div>
@@ -415,9 +407,7 @@ data will appear as three lines of:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -436,11 +426,11 @@ data will appear as three lines of:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -459,6 +449,7 @@ data will appear as three lines of:</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -468,7 +459,7 @@ data will appear as three lines of:</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -477,14 +468,13 @@ data will appear as three lines of:</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

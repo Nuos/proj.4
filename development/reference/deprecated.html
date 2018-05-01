@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Reference" href="index.html"/>
-        <link rel="next" title="Using PROJ in CMake projects" href="../cmake.html"/>
-        <link rel="prev" title="Functions" href="functions.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using PROJ in CMake projects" href="../cmake.html" />
+    <link rel="prev" title="Functions" href="functions.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -139,7 +130,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -147,9 +138,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -223,38 +215,38 @@
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Procedure <code class="docutils literal"><span class="pre">pj_init()</span></code> selects and initializes a cartographic
-projection with its argument control parameters. <code class="docutils literal"><span class="pre">argc</span></code> is the number
+<p>Procedure <code class="docutils literal notranslate"><span class="pre">pj_init()</span></code> selects and initializes a cartographic
+projection with its argument control parameters. <code class="docutils literal notranslate"><span class="pre">argc</span></code> is the number
 of elements in the array of control strings argv that each contain
 individual cartographic control keyword assignments (+ proj arguments).
 The list must contain at least the proj=projection and Earth’s radius or
 elliptical parameters. If the initialization of the projection is
 successful a valid address is returned otherwise a NULL value.</p>
-<p>The <code class="docutils literal"><span class="pre">pj_init_plus()</span></code> function operates similarly to <code class="docutils literal"><span class="pre">pj_init()</span></code> but
+<p>The <code class="docutils literal notranslate"><span class="pre">pj_init_plus()</span></code> function operates similarly to <code class="docutils literal notranslate"><span class="pre">pj_init()</span></code> but
 takes a single string containing the definition, with each parameter
 prefixed with a plus sign. For example
-<code class="docutils literal"><span class="pre">+proj=utm</span> <span class="pre">+zone=11</span> <span class="pre">+ellps=WGS84</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">+proj=utm</span> <span class="pre">+zone=11</span> <span class="pre">+ellps=WGS84</span></code>.</p>
 <p>Once initialization is performed either forward or inverse projections
-can be performed with the returned value of <code class="docutils literal"><span class="pre">pj_init()</span></code> used as the
+can be performed with the returned value of <code class="docutils literal notranslate"><span class="pre">pj_init()</span></code> used as the
 argument proj. The argument structure projUV values u and v contain
 respective longitude and latitude or x and y. Latitude and longitude are
 in radians. If a projection operation fails, both elements of projUV are
-set to <code class="docutils literal"><span class="pre">HUGE_VAL</span></code> (defined in <code class="docutils literal"><span class="pre">math.h</span></code>).</p>
+set to <code class="docutils literal notranslate"><span class="pre">HUGE_VAL</span></code> (defined in <code class="docutils literal notranslate"><span class="pre">math.h</span></code>).</p>
 <p>Note: all projections have a forward mode, but some do not have an
 inverse projection. If the projection does not have an inverse the
-projPJ structure element inv will be <code class="docutils literal"><span class="pre">NULL</span></code>.</p>
-<p>The <code class="docutils literal"><span class="pre">pj_transform</span></code> function may be used to transform points between
+projPJ structure element inv will be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pj_transform</span></code> function may be used to transform points between
 the two provided coordinate systems. In addition to converting between
 cartographic projection coordinates and geographic coordinates, this
 function also takes care of datum shifts if possible between the source
-and destination coordinate system. Unlike <code class="docutils literal"><span class="pre">pj_fwd()</span></code> and <code class="docutils literal"><span class="pre">pj_inv()</span></code>
+and destination coordinate system. Unlike <code class="docutils literal notranslate"><span class="pre">pj_fwd()</span></code> and <code class="docutils literal notranslate"><span class="pre">pj_inv()</span></code>
 it is also allowable for the coordinate system definitions
-<code class="docutils literal"><span class="pre">(projPJ</span> <span class="pre">*)</span></code> to be geographic coordinate systems (defined as
-<code class="docutils literal"><span class="pre">+proj=latlong</span></code>).
+<code class="docutils literal notranslate"><span class="pre">(projPJ</span> <span class="pre">*)</span></code> to be geographic coordinate systems (defined as
+<code class="docutils literal notranslate"><span class="pre">+proj=latlong</span></code>).
 The x, y and z arrays contain the input values of the points, and are replaced with the output values.
-The function returns zero on success, or the error number (also in <code class="docutils literal"><span class="pre">pj_errno</span></code>)
+The function returns zero on success, or the error number (also in <code class="docutils literal notranslate"><span class="pre">pj_errno</span></code>)
 on failure.</p>
-<p>Memory associated with the projection may be freed with <code class="docutils literal"><span class="pre">pj_free()</span></code>.</p>
+<p>Memory associated with the projection may be freed with <code class="docutils literal notranslate"><span class="pre">pj_free()</span></code>.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
@@ -262,7 +254,7 @@ on failure.</p>
 degrees, performs Mercator projection with a Clarke 1866 ellipsoid and a
 33° latitude of true scale and prints the projected cartesian values in
 meters:</p>
-<div class="code highlight-none"><div class="highlight"><pre><span></span>#include &lt;proj_api.h&gt;
+<div class="code highlight-none notranslate"><div class="highlight"><pre><span></span>#include &lt;proj_api.h&gt;
 
 main(int argc, char **argv) {
      projPJ pj_merc, pj_latlong;
@@ -282,14 +274,14 @@ main(int argc, char **argv) {
 }
 </pre></div>
 </div>
-<p>For this program, an input of <code class="docutils literal"><span class="pre">-16</span> <span class="pre">20.25</span></code> would give a result of
-<code class="docutils literal"><span class="pre">-1495284.21</span> <span class="pre">1920596.79</span></code>.</p>
+<p>For this program, an input of <code class="docutils literal notranslate"><span class="pre">-16</span> <span class="pre">20.25</span></code> would give a result of
+<code class="docutils literal notranslate"><span class="pre">-1495284.21</span> <span class="pre">1920596.79</span></code>.</p>
 </div>
 <div class="section" id="api-functions">
 <h2>API Functions<a class="headerlink" href="#api-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="pj-transform">
 <h3>pj_transform<a class="headerlink" href="#pj-transform" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>int pj_transform( projPJ srcdefn,
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>int pj_transform( projPJ srcdefn,
                   projPJ dstdefn,
                   long point_count,
                   int point_offset,
@@ -300,127 +292,127 @@ main(int argc, char **argv) {
 </div>
 <p>Transform the x/y/z points from the source coordinate system to the
 destination coordinate system.</p>
-<p><code class="docutils literal"><span class="pre">srcdefn</span></code>: source (input) coordinate system.</p>
-<p><code class="docutils literal"><span class="pre">dstdefn</span></code>: destination (output) coordinate system.</p>
-<p><code class="docutils literal"><span class="pre">point_count</span></code>: the number of points to be processed (the size of the
+<p><code class="docutils literal notranslate"><span class="pre">srcdefn</span></code>: source (input) coordinate system.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dstdefn</span></code>: destination (output) coordinate system.</p>
+<p><code class="docutils literal notranslate"><span class="pre">point_count</span></code>: the number of points to be processed (the size of the
 x/y/z arrays).</p>
-<p><code class="docutils literal"><span class="pre">point_offset</span></code>: the step size from value to value (measured in
+<p><code class="docutils literal notranslate"><span class="pre">point_offset</span></code>: the step size from value to value (measured in
 doubles) within the x/y/z arrays - normally 1 for a packed array. May be
 used to operate on xyz interleaved point arrays.</p>
-<p><code class="docutils literal"><span class="pre">x</span></code>/<code class="docutils literal"><span class="pre">y</span></code>/<code class="docutils literal"><span class="pre">z</span></code>: The array of X, Y and Z coordinate values passed as
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>/<code class="docutils literal notranslate"><span class="pre">z</span></code>: The array of X, Y and Z coordinate values passed as
 input, and modified in place for output. The Z may optionally be NULL.</p>
-<p><code class="docutils literal"><span class="pre">return</span></code>: The return is zero on success, or a PROJ.4 error code.</p>
-<p>The <code class="docutils literal"><span class="pre">pj_transform()</span></code> function transforms the passed in list of points
+<p><code class="docutils literal notranslate"><span class="pre">return</span></code>: The return is zero on success, or a PROJ.4 error code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pj_transform()</span></code> function transforms the passed in list of points
 from the source coordinate system to the destination coordinate system.
 Note that geographic locations need to be passed in radians, not decimal
-degrees, and will be returned similarly. The <code class="docutils literal"><span class="pre">z</span></code> array may be passed
+degrees, and will be returned similarly. The <code class="docutils literal notranslate"><span class="pre">z</span></code> array may be passed
 as NULL if Z values are not available.</p>
 <p>If there is an overall failure, an error code will be returned from the
 function. If individual points fail to transform - for instance due to
 being over the horizon - then those x/y/z values will be set to
-<code class="docutils literal"><span class="pre">HUGE_VAL</span></code> on return. Input values that are <code class="docutils literal"><span class="pre">HUGE_VAL</span></code> will not be
+<code class="docutils literal notranslate"><span class="pre">HUGE_VAL</span></code> on return. Input values that are <code class="docutils literal notranslate"><span class="pre">HUGE_VAL</span></code> will not be
 transformed.</p>
 </div>
 <div class="section" id="pj-init-plus">
 <h3>pj_init_plus<a class="headerlink" href="#pj-init-plus" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>projPJ pj_init_plus(const char *definition);
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>projPJ pj_init_plus(const char *definition);
 </pre></div>
 </div>
 <p>This function converts a string representation of a coordinate system
 definition into a projPJ object suitable for use with other API
 functions. On failure the function will return NULL and set pj_errno.
 The definition should be of the general form
-<code class="docutils literal"><span class="pre">+proj=tmerc</span> <span class="pre">+lon_0</span> <span class="pre">+datum=WGS84</span></code>. Refer to PROJ.4 documentation and
+<code class="docutils literal notranslate"><span class="pre">+proj=tmerc</span> <span class="pre">+lon_0</span> <span class="pre">+datum=WGS84</span></code>. Refer to PROJ.4 documentation and
 the <a class="reference internal" href="../../usage/transformation.html#transformation"><span class="std std-ref">Geodetic transformation</span></a> notes for additional detail.</p>
-<p>Coordinate system objects allocated with <code class="docutils literal"><span class="pre">pj_init_plus()</span></code> should be
-deallocated with <code class="docutils literal"><span class="pre">pj_free()</span></code>.</p>
+<p>Coordinate system objects allocated with <code class="docutils literal notranslate"><span class="pre">pj_init_plus()</span></code> should be
+deallocated with <code class="docutils literal notranslate"><span class="pre">pj_free()</span></code>.</p>
 </div>
 <div class="section" id="pj-free">
 <h3>pj_free<a class="headerlink" href="#pj-free" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>void pj_free( projPJ pj );
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void pj_free( projPJ pj );
 </pre></div>
 </div>
 <p>Frees all resources associated with pj.</p>
 </div>
 <div class="section" id="pj-is-latlong">
 <h3>pj_is_latlong<a class="headerlink" href="#pj-is-latlong" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>int pj_is_latlong( projPJ pj );
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>int pj_is_latlong( projPJ pj );
 </pre></div>
 </div>
 <p>Returns TRUE if the passed coordinate system is geographic
-(<code class="docutils literal"><span class="pre">proj=latlong</span></code>).</p>
+(<code class="docutils literal notranslate"><span class="pre">proj=latlong</span></code>).</p>
 </div>
 <div class="section" id="pj-is-geocent">
 <h3>pj_is_geocent<a class="headerlink" href="#pj-is-geocent" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>int pj_is_geocent( projPJ pj );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>int pj_is_geocent( projPJ pj );``
 </pre></div>
 </div>
-<p>Returns TRUE if the coordinate system is geocentric (<code class="docutils literal"><span class="pre">proj=geocent</span></code>).</p>
+<p>Returns TRUE if the coordinate system is geocentric (<code class="docutils literal notranslate"><span class="pre">proj=geocent</span></code>).</p>
 </div>
 <div class="section" id="pj-get-def">
 <h3>pj_get_def<a class="headerlink" href="#pj-get-def" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>char *pj_get_def( projPJ pj, int options);``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>char *pj_get_def( projPJ pj, int options);``
 </pre></div>
 </div>
 <p>Returns the PROJ.4 initialization string suitable for use with
-<code class="docutils literal"><span class="pre">pj_init_plus()</span></code> that would produce this coordinate system, but with
-the definition expanded as much as possible (for instance <code class="docutils literal"><span class="pre">+init=</span></code> and
-<code class="docutils literal"><span class="pre">+datum=</span></code> definitions).</p>
+<code class="docutils literal notranslate"><span class="pre">pj_init_plus()</span></code> that would produce this coordinate system, but with
+the definition expanded as much as possible (for instance <code class="docutils literal notranslate"><span class="pre">+init=</span></code> and
+<code class="docutils literal notranslate"><span class="pre">+datum=</span></code> definitions).</p>
 </div>
 <div class="section" id="pj-latlong-from-proj">
 <h3>pj_latlong_from_proj<a class="headerlink" href="#pj-latlong-from-proj" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>projPJ pj_latlong_from_proj( projPJ pj_in );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>projPJ pj_latlong_from_proj( projPJ pj_in );``
 </pre></div>
 </div>
 <p>Returns a new coordinate system definition which is the geographic
-coordinate (lat/long) system underlying <code class="docutils literal"><span class="pre">pj_in</span></code>.</p>
+coordinate (lat/long) system underlying <code class="docutils literal notranslate"><span class="pre">pj_in</span></code>.</p>
 </div>
 <div class="section" id="pj-set-finder">
 <h3>pj_set_finder<a class="headerlink" href="#pj-set-finder" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>void pj_set_finder( const char *(*new_finder)(const char *) );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void pj_set_finder( const char *(*new_finder)(const char *) );``
 </pre></div>
 </div>
 <p>Install a custom function for finding init and grid shift files.</p>
 </div>
 <div class="section" id="pj-set-searchpath">
 <h3>pj_set_searchpath<a class="headerlink" href="#pj-set-searchpath" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>void pj_set_searchpath ( int count, const char **path );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void pj_set_searchpath ( int count, const char **path );``
 </pre></div>
 </div>
 <p>Set a list of directories to search for init and grid shift files.</p>
 </div>
 <div class="section" id="pj-deallocate-grids">
 <h3>pj_deallocate_grids<a class="headerlink" href="#pj-deallocate-grids" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>void pj_deallocate_grids( void );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void pj_deallocate_grids( void );``
 </pre></div>
 </div>
 <p>Frees all resources associated with loaded and cached datum shift grids.</p>
 </div>
 <div class="section" id="pj-strerrno">
 <h3>pj_strerrno<a class="headerlink" href="#pj-strerrno" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>char *pj_strerrno( int );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>char *pj_strerrno( int );``
 </pre></div>
 </div>
 <p>Returns the error text associated with the passed in error code.</p>
 </div>
 <div class="section" id="pj-get-errno-ref">
 <h3>pj_get_errno_ref<a class="headerlink" href="#pj-get-errno-ref" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>int *pj_get_errno_ref( void );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>int *pj_get_errno_ref( void );``
 </pre></div>
 </div>
 <p>Returns a pointer to the global pj_errno error variable.</p>
 </div>
 <div class="section" id="pj-get-release">
 <h3>pj_get_release<a class="headerlink" href="#pj-get-release" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none"><div class="highlight"><pre><span></span>const char *pj_get_release( void );``
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>const char *pj_get_release( void );``
 </pre></div>
 </div>
 <p>Returns an internal string describing the release version.</p>
 <div class="section" id="obsolete-functions">
 <h4>Obsolete Functions<a class="headerlink" href="#obsolete-functions" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">XY</span> <span class="pre">pj_fwd(</span> <span class="pre">LP</span> <span class="pre">lp,</span> <span class="pre">PJ</span> <span class="pre">*P</span> <span class="pre">);</span></code></p>
-<p><code class="docutils literal"><span class="pre">LP</span> <span class="pre">pj_inv(</span> <span class="pre">XY</span> <span class="pre">xy,</span> <span class="pre">PJ</span> <span class="pre">*P</span> <span class="pre">);</span></code></p>
-<p><code class="docutils literal"><span class="pre">projPJ</span> <span class="pre">pj_init(int</span> <span class="pre">argc,</span> <span class="pre">char</span> <span class="pre">**argv);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">XY</span> <span class="pre">pj_fwd(</span> <span class="pre">LP</span> <span class="pre">lp,</span> <span class="pre">PJ</span> <span class="pre">*P</span> <span class="pre">);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">LP</span> <span class="pre">pj_inv(</span> <span class="pre">XY</span> <span class="pre">xy,</span> <span class="pre">PJ</span> <span class="pre">*P</span> <span class="pre">);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">projPJ</span> <span class="pre">pj_init(int</span> <span class="pre">argc,</span> <span class="pre">char</span> <span class="pre">**argv);</span></code></p>
 </div>
 </div>
 </div>
@@ -428,9 +420,7 @@ coordinate (lat/long) system underlying <code class="docutils literal"><span cla
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -449,11 +439,11 @@ coordinate (lat/long) system underlying <code class="docutils literal"><span cla
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -472,6 +462,7 @@ coordinate (lat/long) system underlying <code class="docutils literal"><span cla
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -481,7 +472,7 @@ coordinate (lat/long) system underlying <code class="docutils literal"><span cla
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -490,14 +481,13 @@ coordinate (lat/long) system underlying <code class="docutils literal"><span cla
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -25,29 +25,20 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PROJ.4 5.0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Transformations" href="index.html"/>
-        <link rel="next" title="Horizontal grid shift" href="hgridshift.html"/>
-        <link rel="prev" title="Helmert transform" href="helmert.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Horizontal grid shift" href="hgridshift.html" />
+    <link rel="prev" title="Helmert transform" href="helmert.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -106,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="helmert.html">Helmert transform</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Molodensky transform</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="hgridshift.html">Horizontal grid shift</a></li>
@@ -134,7 +126,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">PROJ.4</a>
@@ -142,9 +134,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -190,6 +183,9 @@
             
   <div class="section" id="molodensky-transform">
 <span id="molodensky"></span><h1>Molodensky transform<a class="headerlink" href="#molodensky-transform" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
 <p>The Molodensky transformation resembles a <a class="reference internal" href="helmert.html#helmert"><span class="std std-ref">Helmert transform</span></a> with zero
 rotations and a scale of unity, but converts directly from geodetic coordinates to
 geodetic coordinates, without the intermediate shifts to and from cartesian
@@ -207,51 +203,31 @@ already been transformed that way <a class="reference internal" href="../../refe
 <col width="73%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><strong>Alias</strong></td>
+<td>molodensky</td>
+</tr>
+<tr class="row-even"><td><strong>Domain</strong></td>
+<td>3D</td>
+</tr>
 <tr class="row-odd"><td><strong>Input type</strong></td>
-<td>Geodetic coordinates.</td>
+<td>Geodetic coordinates (horizontal), meters (vertical)</td>
 </tr>
-<tr class="row-even"><td><strong>Output type</strong></td>
-<td>Geodetic coordinates.</td>
-</tr>
-<tr class="row-odd"><td colspan="2"><strong>Options</strong></td>
-</tr>
-<tr class="row-even"><td><cite>+da</cite></td>
-<td>Difference in semimajor axis of the defining ellipsoids.</td>
-</tr>
-<tr class="row-odd"><td><cite>+df</cite></td>
-<td>Difference in flattening of the defining ellipsoids.</td>
-</tr>
-<tr class="row-even"><td><cite>+dx</cite></td>
-<td>Offset of the X-axes of the defining ellipsoids.</td>
-</tr>
-<tr class="row-odd"><td><cite>+dy</cite></td>
-<td>Offset of the Y-axes of the defining ellipsoids.</td>
-</tr>
-<tr class="row-even"><td><cite>+dz</cite></td>
-<td>Offset of the Z-axes of the defining ellipsoids.</td>
-</tr>
-<tr class="row-odd"><td><cite>+ellps</cite></td>
-<td>Ellipsoid definition of source coordinates.
-Any specification can be used (e.g. <cite>+a</cite>, <cite>+rf</cite>, etc).
-If not specified, default ellipsoid is used.</td>
-</tr>
-<tr class="row-even"><td><cite>+abridged</cite></td>
-<td>Use the abridged version of the Molodensky transform.
-Optional.</td>
+<tr class="row-even"><td><strong>output type</strong></td>
+<td>Geodetic coordinates (horizontal), meters (vertical)</td>
 </tr>
 </tbody>
 </table>
 <p>The Molodensky transform can be used to perform a datum shift from coordinate
-<span class="math">\((\phi_1, \lambda_1, h_1)\)</span> to <span class="math">\((\phi_2, \lambda_2, h_2)\)</span> where the two
+<span class="math notranslate nohighlight">\((\phi_1, \lambda_1, h_1)\)</span> to <span class="math notranslate nohighlight">\((\phi_2, \lambda_2, h_2)\)</span> where the two
 coordinates are referenced to different ellipsoids. This is based on three
 assumptions:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>The cartesian axes, <span class="math">\(X, Y, Z\)</span>,  of the two ellipsoids are parallel.</li>
-<li>The offset, <span class="math">\(\delta X, \delta Y, \delta Z\)</span>,  between the two ellipsoid
+<li>The cartesian axes, <span class="math notranslate nohighlight">\(X, Y, Z\)</span>,  of the two ellipsoids are parallel.</li>
+<li>The offset, <span class="math notranslate nohighlight">\(\delta X, \delta Y, \delta Z\)</span>,  between the two ellipsoid
 are known.</li>
 <li>The characteristics of the two ellipsoids, expressed as the difference in
-semimajor axis (<span class="math">\(\delta a\)</span>) and flattening (<span class="math">\(\delta f\)</span>),  are known.</li>
+semimajor axis (<span class="math notranslate nohighlight">\(\delta a\)</span>) and flattening (<span class="math notranslate nohighlight">\(\delta f\)</span>),  are known.</li>
 </ol>
 </div></blockquote>
 <p>The Molodensky transform is mostly used for transforming between old systems
@@ -263,21 +239,71 @@ in <a class="reference internal" href="../../references.html#deakin2004" id="id2
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The abridged Molodensky:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>proj=molodensky a=6378160 rf=298.25 da=-23 df=-8.120449e-8  dx=-134 dy=-48 dz=149 abridged
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>proj=molodensky a=6378160 rf=298.25 da=-23 df=-8.120449e-8  dx=-134 dy=-48 dz=149 abridged
 </pre></div>
 </div>
 <p>The same transformation using the standard Molodensky:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>proj=molodensky a=6378160 rf=298.25 da=-23 df=-8.120449e-8  dx=-134 dy=-48 dz=149
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>proj=molodensky a=6378160 rf=298.25 da=-23 df=-8.120449e-8  dx=-134 dy=-48 dz=149
 </pre></div>
 </div>
 </div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="required">
+<h3>Required<a class="headerlink" href="#required" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-arg-da">
+<code class="descname">+da</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-da" title="Permalink to this definition">¶</a></dt>
+<dd><p>Difference in semimajor axis of the defining ellipsoids.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-df">
+<code class="descname">+df</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Difference in flattening of the defining ellipsoids.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-dx">
+<code class="descname">+dx</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-dx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the X-axes of the defining ellipsoids.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-dy">
+<code class="descname">+dy</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-dy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the Y-axes of the defining ellipsoids.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-dz">
+<code class="descname">+dz</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-dz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the Z-axes of the defining ellipsoids.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-ellps">
+<code class="descname">+ellps</code><code class="descclassname">=&lt;value&gt;</code><a class="headerlink" href="#cmdoption-arg-ellps" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="../../apps/proj.html#cmdoption-proj-le"><code class="xref std std-option docutils literal notranslate"><span class="pre">proj</span> <span class="pre">-le</span></code></a> for a list of available ellipsoids.</p>
+<p><em>Defaults to “WGS84”.</em></p>
+</dd></dl>
+
+</div>
+<div class="section" id="optional">
+<h3>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-arg-abridged">
+<code class="descname">+abridged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-abridged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the abridged version of the Molodensky transform.</p>
+</dd></dl>
+
+</div>
+</div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -296,11 +322,11 @@ in <a class="reference internal" href="../../references.html#deakin2004" id="id2
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 30 Apr 2018.
+      Last updated on 01 May 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -319,6 +345,7 @@ in <a class="reference internal" href="../../references.html#deakin2004" id="id2
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'5.0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -328,7 +355,7 @@ in <a class="reference internal" href="../../references.html#deakin2004" id="id2
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
@@ -337,14 +364,13 @@ in <a class="reference internal" href="../../references.html#deakin2004" id="id2
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
