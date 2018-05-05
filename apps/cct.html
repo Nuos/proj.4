@@ -181,19 +181,25 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><strong>cct</strong> [ <strong>-cotvz</strong> [ args ] ] <em>+opts[=arg]</em>  file[s]</div></blockquote>
+<div><strong>cct</strong> [ <strong>-cIostvz</strong> [ args ] ] <em>+opts[=arg]</em> file[s]</div></blockquote>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong class="program">cct</strong> a 4D equivalent to the <strong class="program">proj</strong> projection program,
-performs transformation coordinate systems on a set of input points.  The
-coordinate system transformation can include  translation  between projected
+performs transformation coordinate systems on a set of input points. The
+coordinate system transformation can include translation between projected
 and geographic coordinates as well as the application of datum shifts.</p>
-<p>The following control parameters can  appear  in any order:</p>
+<p>The following control parameters can appear in any order:</p>
 <dl class="option">
 <dt id="cmdoption-cct-c">
 <code class="descname">-c</code><code class="descclassname"> &lt;x,y,z,t&gt;</code><a class="headerlink" href="#cmdoption-cct-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify input columns for (up to) 4 input parameters. Defaults to 1,2,3,4.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-cct-i">
+<code class="descname">-I</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cct-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do the inverse transformation.</p>
 </dd></dl>
 
 <dl class="option">
@@ -205,22 +211,22 @@ and geographic coordinates as well as the application of datum shifts.</p>
 <dl class="option">
 <dt id="cmdoption-cct-t">
 <code class="descname">-t</code><code class="descclassname"> &lt;time&gt;</code><code class="descclassname">, </code><code class="descname">--time</code><code class="descclassname">=&lt;time&gt;</code><a class="headerlink" href="#cmdoption-cct-t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify a fixed observation time to be used for all input data.</p>
+<dd><p>Specify a fixed observation <em>time</em> to be used for all input data.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-cct-z">
 <code class="descname">-z</code><code class="descclassname"> &lt;height&gt;</code><code class="descclassname">, </code><code class="descname">--height</code><code class="descclassname">=&lt;height&gt;</code><a class="headerlink" href="#cmdoption-cct-z" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify a fixed observation height to be used for all input data.</p>
+<dd><p>Specify a fixed observation <em>height</em> to be used for all input data.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cct-arg-s">
-<code class="descname">s</code><code class="descclassname"> &lt;n&gt;</code><code class="descclassname">, </code><code class="descname">--skip-lines</code><code class="descclassname">=&lt;n&gt;</code><a class="headerlink" href="#cmdoption-cct-arg-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cct-s">
+<code class="descname">-s</code><code class="descclassname"> &lt;n&gt;</code><code class="descclassname">, </code><code class="descname">--skip-lines</code><code class="descclassname">=&lt;n&gt;</code><a class="headerlink" href="#cmdoption-cct-s" title="Permalink to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
-<p>Skip the first <em>n</em> lines of input. This applies to any kind of input, wether
+<p>Skip the first <em>n</em> lines of input. This applies to any kind of input, whether
 it comes from <code class="docutils literal notranslate"><span class="pre">STDIN</span></code>, a file or interactive user input.</p>
 </dd></dl>
 
@@ -264,7 +270,7 @@ Hence, the command</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo 12 55 | cct -z0 -t0 +proj=utm +zone=32 +ellps=GRS80</span>
 </pre></div>
 </div>
-<p>Should give results comparable to the classic proj command</p>
+<p>Should give results comparable to the classic <strong class="program">proj</strong> command</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo 12 55 | proj +proj=utm +zone=32 +ellps=GRS80</span>
 </pre></div>
 </div>
@@ -283,14 +289,14 @@ Hence, the command</p>
 <ol class="arabic simple" start="4">
 <li>As (2) but specify input columns for longitude, latitude, height and time:</li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cct -c 5,2,1,4  +proj=utm +ellps=GRS80 +zone=32</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cct -c 5,2,1,4 +proj=utm +ellps=GRS80 +zone=32</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
 <li>As (2) but specify fixed height and time, hence needing only 2 cols in
 input:</li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cct -t 0 -z 0  +proj=utm  +ellps=GRS80  +zone=32</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cct -t 0 -z 0 +proj=utm +ellps=GRS80 +zone=32</span>
 </pre></div>
 </div>
 </div>

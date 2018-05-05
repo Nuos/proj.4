@@ -206,15 +206,15 @@ already employed for compiling the library.</p>
 <dl class="option">
 <dt id="cmdoption-v">
 <code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
-<dd><p>Verbose: Provide non-essential informational output.  Repeat <a class="reference internal" href="#cmdoption-v"><code class="xref std std-option docutils literal notranslate"><span class="pre">-v</span></code></a> for
+<dd><p>Verbose: Provide non-essential informational output. Repeat <a class="reference internal" href="#cmdoption-v"><code class="xref std std-option docutils literal notranslate"><span class="pre">-v</span></code></a> for
 more verbosity (e.g. <code class="docutils literal notranslate"><span class="pre">-vv</span></code>)</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-q">
 <code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-q" title="Permalink to this definition">¶</a></dt>
-<dd><p>Quiet: Opposite of verbose. In  quiet  mode  not  even  errors  are
-reported.  Only  interaction  is through the return code (0 on success,
+<dd><p>Quiet: Opposite of verbose. In quiet mode not even errors are
+reported. Only interaction is through the return code (0 on success,
 non-zero indicates number of FAILED tests)</p>
 </dd></dl>
 
@@ -251,7 +251,7 @@ like:</p>
 <span class="go">&lt;/gie&gt;</span>
 </pre></div>
 </div>
-<p>Parsing of a  <strong class="program">gie</strong> file starts at <code class="docutils literal notranslate"><span class="pre">&lt;gie&gt;</span></code> and ends when <code class="docutils literal notranslate"><span class="pre">&lt;/gie&gt;</span></code>
+<p>Parsing of a <strong class="program">gie</strong> file starts at <code class="docutils literal notranslate"><span class="pre">&lt;gie&gt;</span></code> and ends when <code class="docutils literal notranslate"><span class="pre">&lt;/gie&gt;</span></code>
 is reached. Anything before <code class="docutils literal notranslate"><span class="pre">&lt;gie&gt;</span></code> and after <code class="docutils literal notranslate"><span class="pre">&lt;/gie&gt;</span></code> is not considered.
 Test cases are created by defining an <a class="reference internal" href="#cmdoption-arg-operation"><code class="xref std std-option docutils literal notranslate"><span class="pre">operation</span></code></a> which
 <a class="reference internal" href="#cmdoption-arg-accept"><code class="xref std std-option docutils literal notranslate"><span class="pre">accept</span></code></a> an input coordinate and <a class="reference internal" href="#cmdoption-arg-expect"><code class="xref std std-option docutils literal notranslate"><span class="pre">expect</span></code></a> an output
@@ -312,8 +312,8 @@ component. The number of components in the coordinate determines which
 version of the operation is tested (2D, 3D or 4D). Many coordinates can be
 accepted for one <a class="reference internal" href="#cmdoption-arg-operation"><code class="xref std std-option docutils literal notranslate"><span class="pre">operation</span></code></a>. For each <a class="reference internal" href="#cmdoption-arg-accept"><code class="xref std std-option docutils literal notranslate"><span class="pre">accept</span></code></a> an
 accompanying <a class="reference internal" href="#cmdoption-arg-expect"><code class="xref std std-option docutils literal notranslate"><span class="pre">expect</span></code></a> is needed.</p>
-<p>Note that <strong class="program">gie</strong> accepts the underscore (“_”) as a thousands
-separator.  It is not required (in fact, it is entirely ignored by the
+<p>Note that <strong class="program">gie</strong> accepts the underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) as a thousands
+separator. It is not required (in fact, it is entirely ignored by the
 input routine), but it significantly improves the readability of the very
 long strings of numbers typically required in projected coordinates.</p>
 <p>See <a class="reference internal" href="#cmdoption-arg-operation"><code class="xref std std-option docutils literal notranslate"><span class="pre">operation</span></code></a> for an example.</p>
@@ -331,7 +331,7 @@ Many coordinates can be expected for one <a class="reference internal" href="#cm
 <p>In addition to expecting a coordinate it is also possible to expect a
 PROJ error code in case an operation can’t be created. This is useful when
 testing that errors are caught and handled correctly. Below is an example of
-that tests that the pipeline operator fails correctly when a non-invertable
+that tests that the pipeline operator fails correctly when a non-invertible
 pipeline is constructed.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation   proj=pipeline step</span>
 <span class="go">            proj=urm5 n=0.5 inv</span>
@@ -347,7 +347,7 @@ pipeline is constructed.</p>
 <dd><p>The <a class="reference internal" href="#cmdoption-arg-tolerance"><code class="xref std std-option docutils literal notranslate"><span class="pre">tolerance</span></code></a> command controls how much accepted coordinates
 can deviate from the expected coordinate. This is handy to test that an
 operation meets a certain numerical tolerance threshold. Some operations
-are expexted to be accurate within milimeters  where others might only be
+are expected to be accurate within millimeters where others might only be
 accurate within a few meters. <a class="reference internal" href="#cmdoption-arg-tolerance"><code class="xref std std-option docutils literal notranslate"><span class="pre">tolerance</span></code></a> should</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation       proj=merc</span>
 <span class="gp">#</span> <span class="nb">test</span> coordinate as returned by <span class="sb">```</span><span class="nb">echo</span> <span class="m">12</span> <span class="m">55</span> <span class="p">|</span> proj +proj<span class="o">=</span>merc<span class="sb">``</span>
@@ -415,7 +415,7 @@ pipeline returns the same results in both directions.</p>
 <dd><p>This is especially
 useful in test cases that rely on a grid that is not guaranteed to be
 available. Below is an example of that situation.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation  proj=hgridshift +grids=nzgd2kgrid0005.gsb  ellps=GRS80</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation proj=hgridshift +grids=nzgd2kgrid0005.gsb ellps=GRS80</span>
 <span class="go">tolerance 1 mm</span>
 <span class="go">ignore    pjd_err_failed_to_load_grid</span>
 <span class="go">accept    172.999892181021551 -45.001620431954613</span>
@@ -451,7 +451,7 @@ available. Below is an example of that situation.</p>
 <dl class="option">
 <dt id="cmdoption-arg-skip">
 <code class="descname">skip</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-skip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Skip any test after the first occurence of <a class="reference internal" href="#cmdoption-arg-skip"><code class="xref std std-option docutils literal notranslate"><span class="pre">skip</span></code></a>. In the example below only
+<dd><p>Skip any test after the first occurrence of <a class="reference internal" href="#cmdoption-arg-skip"><code class="xref std std-option docutils literal notranslate"><span class="pre">skip</span></code></a>. In the example below only
 the first test will be performed. The second test is skipped. This feature is mostly
 relevant for debugging when writing new test cases.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;gie&gt;</span>
@@ -472,11 +472,11 @@ relevant for debugging when writing new test cases.</p>
 <p>More importantly than being an acronym for “Geospatial Integrity Investigation
 Environment”, gie were also the initials, user id, and USGS email address of
 Gerald Ian Evenden (1935–2016), the geospatial visionary, who, already in the
-1980s, started what was  to  become  the PROJ of today.</p>
+1980s, started what was to become the PROJ of today.</p>
 <p>Gerald’s clear vision was that map projections are <em>just special functions</em>.
 Some of them rather complex, most of them of two variables, but all of them
 <em>just special functions</em>, and not particularly more special than the <code class="xref c c-func docutils literal notranslate"><span class="pre">sin()</span></code>,
-<code class="xref c c-func docutils literal notranslate"><span class="pre">cos()</span></code>, <code class="xref c c-func docutils literal notranslate"><span class="pre">tan()</span></code>, and <code class="xref c c-func docutils literal notranslate"><span class="pre">hypot()</span></code> already available  in  the  C standard library.</p>
+<code class="xref c c-func docutils literal notranslate"><span class="pre">cos()</span></code>, <code class="xref c c-func docutils literal notranslate"><span class="pre">tan()</span></code>, and <code class="xref c c-func docutils literal notranslate"><span class="pre">hypot()</span></code> already available in the C standard library.</p>
 <p>And hence, according to Gerald, <em>they should not be particularly much harder
 to use</em>, for a programmer, than the <code class="xref c c-func docutils literal notranslate"><span class="pre">sin()</span></code>’s, <code class="xref c c-func docutils literal notranslate"><span class="pre">tan()</span></code>’s and
 <code class="xref c c-func docutils literal notranslate"><span class="pre">hypot()</span></code>’s so readily available.</p>
@@ -484,7 +484,7 @@ to use</em>, for a programmer, than the <code class="xref c c-func docutils lite
 he devised a comprehensive, yet simple, system of key-value pairs for
 parameterising a map projection, and the highly flexible <a class="reference internal" href="../development/reference/datatypes.html#c.PJ" title="PJ"><code class="xref c c-type docutils literal notranslate"><span class="pre">PJ</span></code></a> struct, storing
 run-time compiled versions of those key-value pairs, hence making a map
-projection  function call, <code class="docutils literal notranslate"><span class="pre">pj_fwd(PJ,</span> <span class="pre">point)</span></code>, as easy as a traditional function
+projection function call, <code class="docutils literal notranslate"><span class="pre">pj_fwd(PJ,</span> <span class="pre">point)</span></code>, as easy as a traditional function
 call like <code class="docutils literal notranslate"><span class="pre">hypot(x,y)</span></code>.</p>
 <p>While today, we may have more formally well defined metadata systems (most
 prominent the OGC WKT2 representation), nothing comes close being as easily

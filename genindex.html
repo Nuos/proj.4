@@ -544,8 +544,6 @@
         <li><a href="operations/transformations/helmert.html#cmdoption-arg-z">command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     +z_grids=&lt;list&gt;
 
@@ -553,6 +551,8 @@
         <li><a href="operations/transformations/deformation.html#cmdoption-arg-z-grids">command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     +z_in=&lt;unit&gt;
 
@@ -574,15 +574,6 @@
         <li><a href="apps/cct.html#cmdoption-cct-version">cct command line option</a>
 </li>
         <li><a href="apps/gie.html#cmdoption-version">command line option</a>
-</li>
-      </ul></li>
-      <li>
-    -[w|W]&lt;n&gt;
-
-      <ul>
-        <li><a href="apps/cs2cs.html#cmdoption-cs2cs-w-w-n">cs2cs command line option</a>
-</li>
-        <li><a href="apps/proj.html#cmdoption-proj-w-w-n">proj command line option</a>
 </li>
       </ul></li>
       <li>
@@ -653,6 +644,8 @@
     -I
 
       <ul>
+        <li><a href="apps/cct.html#cmdoption-cct-i">cct command line option</a>
+</li>
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-i">cs2cs command line option</a>
 </li>
         <li><a href="apps/geod.html#cmdoption-geod-i">geod command line option</a>
@@ -800,6 +793,13 @@
 </li>
       </ul></li>
       <li>
+    -s &lt;n&gt;, --skip-lines=&lt;n&gt;
+
+      <ul>
+        <li><a href="apps/cct.html#cmdoption-cct-s">cct command line option</a>
+</li>
+      </ul></li>
+      <li>
     -t &lt;time&gt;, --time=&lt;time&gt;
 
       <ul>
@@ -819,21 +819,16 @@
       <ul>
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-t-a">cs2cs command line option</a>
 </li>
-        <li><a href="apps/proj.html#cmdoption-proj-t-a">proj command line option</a>
+        <li><a href="apps/geod.html#cmdoption-geod-t-a">geod command line option</a>
 </li>
-      </ul></li>
-      <li>
-    -ta
-
-      <ul>
-        <li><a href="apps/geod.html#cmdoption-geod-ta">geod command line option</a>
+        <li><a href="apps/proj.html#cmdoption-proj-t-a">proj command line option</a>
 </li>
       </ul></li>
       <li>
     -V
 
       <ul>
-        <li><a href="apps/proj.html#id6">proj command line option</a>
+        <li><a href="apps/proj.html#id7">proj command line option</a>
 </li>
       </ul></li>
       <li>
@@ -858,14 +853,22 @@
     -W&lt;n&gt;
 
       <ul>
+        <li><a href="apps/cs2cs.html#id4">cs2cs command line option</a>
+</li>
         <li><a href="apps/geod.html#id3">geod command line option</a>
+</li>
+        <li><a href="apps/proj.html#id6">proj command line option</a>
 </li>
       </ul></li>
       <li>
     -w&lt;n&gt;
 
       <ul>
+        <li><a href="apps/cs2cs.html#cmdoption-cs2cs-w-n">cs2cs command line option</a>
+</li>
         <li><a href="apps/geod.html#cmdoption-geod-w-n">geod command line option</a>
+</li>
+        <li><a href="apps/proj.html#cmdoption-proj-w-n">proj command line option</a>
 </li>
       </ul></li>
       <li>
@@ -902,17 +905,19 @@
       <ul>
         <li><a href="apps/cct.html#cmdoption-cct-version">--version</a>
 </li>
+        <li><a href="apps/cct.html#cmdoption-cct-i">-I</a>
+</li>
         <li><a href="apps/cct.html#cmdoption-cct-c">-c &lt;x,y,z,t&gt;</a>
 </li>
         <li><a href="apps/cct.html#cmdoption-cct-o">-o &lt;output file name&gt;, --output=&lt;output file name&gt;</a>
+</li>
+        <li><a href="apps/cct.html#cmdoption-cct-s">-s &lt;n&gt;, --skip-lines=&lt;n&gt;</a>
 </li>
         <li><a href="apps/cct.html#cmdoption-cct-t">-t &lt;time&gt;, --time=&lt;time&gt;</a>
 </li>
         <li><a href="apps/cct.html#cmdoption-cct-v">-v, --verbose</a>
 </li>
         <li><a href="apps/cct.html#cmdoption-cct-z">-z &lt;height&gt;, --height=&lt;height&gt;</a>
-</li>
-        <li><a href="apps/cct.html#cmdoption-cct-arg-s">s &lt;n&gt;, --skip-lines=&lt;n&gt;</a>
 </li>
       </ul></li>
       <li>
@@ -1070,7 +1075,7 @@
 </li>
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-i">-I</a>
 </li>
-        <li><a href="apps/cs2cs.html#cmdoption-cs2cs-w-w-n">-[w|W]&lt;n&gt;</a>
+        <li><a href="apps/cs2cs.html#id4">-W&lt;n&gt;</a>
 </li>
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-e">-e &lt;string&gt;</a>
 </li>
@@ -1095,6 +1100,8 @@
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-t-a">-t&lt;a&gt;</a>
 </li>
         <li><a href="apps/cs2cs.html#cmdoption-cs2cs-v">-v</a>
+</li>
+        <li><a href="apps/cs2cs.html#cmdoption-cs2cs-w-n">-w&lt;n&gt;</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1129,7 +1136,7 @@
       <ul>
         <li><a href="usage/environmentvars.html#envvar-PROJ_DEBUG">PROJ_DEBUG</a>
 </li>
-        <li><a href="apps/proj.html#index-1">PROJ_LIB</a>, <a href="development/reference/functions.html#index-0">[1]</a>, <a href="usage/environmentvars.html#envvar-PROJ_LIB">[2]</a>, <a href="usage/environmentvars.html#index-0">[3]</a>, <a href="usage/environmentvars.html#index-1">[4]</a>
+        <li><a href="apps/cs2cs.html#index-0">PROJ_LIB</a>, <a href="apps/proj.html#index-1">[1]</a>, <a href="development/reference/functions.html#index-0">[2]</a>, <a href="usage/environmentvars.html#envvar-PROJ_LIB">[3]</a>, <a href="usage/environmentvars.html#index-0">[4]</a>, <a href="usage/environmentvars.html#index-1">[5]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1167,7 +1174,7 @@
 </li>
         <li><a href="apps/geod.html#cmdoption-geod-p">-p</a>
 </li>
-        <li><a href="apps/geod.html#cmdoption-geod-ta">-ta</a>
+        <li><a href="apps/geod.html#cmdoption-geod-t-a">-t&lt;a&gt;</a>
 </li>
         <li><a href="apps/geod.html#cmdoption-geod-w-n">-w&lt;n&gt;</a>
 </li>
@@ -1386,10 +1393,10 @@
 </li>
       <li><a href="development/reference/datatypes.html#c.PJ_UNITS.factor">PJ_UNITS.factor (C member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="development/reference/datatypes.html#c.PJ_UNITS.id">PJ_UNITS.id (C member)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="development/reference/datatypes.html#c.PJ_UNITS.name">PJ_UNITS.name (C member)</a>
 </li>
       <li><a href="development/reference/datatypes.html#c.PJ_UNITS.to_meter">PJ_UNITS.to_meter (C member)</a>
@@ -1456,9 +1463,9 @@
 </li>
         <li><a href="apps/proj.html#cmdoption-proj-t">-T &lt;ulow,uhi,vlow,vhi,res[,umax,vmax]&gt;</a>
 </li>
-        <li><a href="apps/proj.html#id6">-V</a>
+        <li><a href="apps/proj.html#id7">-V</a>
 </li>
-        <li><a href="apps/proj.html#cmdoption-proj-w-w-n">-[w|W]&lt;n&gt;</a>
+        <li><a href="apps/proj.html#id6">-W&lt;n&gt;</a>
 </li>
         <li><a href="apps/proj.html#cmdoption-proj-b">-b</a>
 </li>
@@ -1491,6 +1498,8 @@
         <li><a href="apps/proj.html#cmdoption-proj-t-a">-t&lt;a&gt;</a>
 </li>
         <li><a href="apps/proj.html#cmdoption-proj-v">-v</a>
+</li>
+        <li><a href="apps/proj.html#cmdoption-proj-w-n">-w&lt;n&gt;</a>
 </li>
       </ul></li>
       <li><a href="development/reference/functions.html#c.proj_angular_input">proj_angular_input (C function)</a>
@@ -1533,7 +1542,7 @@
 </li>
       <li><a href="development/reference/functions.html#c.proj_init_info">proj_init_info (C function)</a>
 </li>
-      <li><a href="apps/proj.html#index-1">PROJ_LIB</a>, <a href="development/reference/functions.html#index-0">[1]</a>, <a href="usage/environmentvars.html#index-0">[2]</a>, <a href="usage/environmentvars.html#index-1">[3]</a>
+      <li><a href="apps/cs2cs.html#index-0">PROJ_LIB</a>, <a href="apps/proj.html#index-1">[1]</a>, <a href="development/reference/functions.html#index-0">[2]</a>, <a href="usage/environmentvars.html#index-0">[3]</a>, <a href="usage/environmentvars.html#index-1">[4]</a>
 </li>
       <li><a href="development/reference/functions.html#c.proj_list_ellps">proj_list_ellps (C function)</a>
 </li>
@@ -1589,15 +1598,6 @@
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    s &lt;n&gt;, --skip-lines=&lt;n&gt;
-
-      <ul>
-        <li><a href="apps/cct.html#cmdoption-cct-arg-s">cct command line option</a>
-</li>
-      </ul></li>
-  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     skip
