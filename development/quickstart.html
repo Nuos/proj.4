@@ -235,7 +235,7 @@ Here the forward (<code class="docutils literal notranslate"><span class="pre">P
 </div>
 <p>The inverse transformation (UTM to geodetic) is done similar to above,
 this time using <code class="docutils literal notranslate"><span class="pre">PJ_INV</span></code> as the direction.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span> <span class="p">(</span><span class="s">&quot;easting: %g, northing: %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">e</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">en</span><span class="p">.</span><span class="n">n</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span> <span class="p">(</span><span class="s">&quot;easting: %g, northing: %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">e</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">n</span><span class="p">);</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">proj_trans</span> <span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">PJ_INV</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -297,7 +297,7 @@ this time using <code class="docutils literal notranslate"><span class="pre">PJ_
 
     <span class="cm">/* transform to UTM zone 32, then back to geographical */</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">proj_trans</span> <span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">PJ_FWD</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
-    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;easting: %g, northing: %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">e</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">en</span><span class="p">.</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;easting: %g, northing: %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">e</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">enu</span><span class="p">.</span><span class="n">n</span><span class="p">);</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">proj_trans</span> <span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">PJ_INV</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
     <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;longitude: %g, latitude: %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">lp</span><span class="p">.</span><span class="n">lam</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">lp</span><span class="p">.</span><span class="n">phi</span><span class="p">);</span>
 
@@ -331,7 +331,7 @@ this time using <code class="docutils literal notranslate"><span class="pre">PJ_
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 05 May 2018.
+      Last updated on 06 May 2018.
 
     </p>
   </div>
