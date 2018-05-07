@@ -799,7 +799,8 @@ allocated and does not need to be freed after use.</p>
 <dl class="function">
 <dt id="c.proj_lp_dist">
 double <code class="descname">proj_lp_dist</code><span class="sig-paren">(</span>const <a class="reference internal" href="datatypes.html#c.PJ" title="PJ">PJ</a><em>&nbsp;*P</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;a</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;b</em><span class="sig-paren">)</span><a class="headerlink" href="#c.proj_lp_dist" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate geodesic distance between two points in geodetic coordinates.</p>
+<dd><p>Calculate geodesic distance between two points in geodetic coordinates. The
+calculated distance is between the two points located on the ellipsoid.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -819,9 +820,11 @@ double <code class="descname">proj_lp_dist</code><span class="sig-paren">(</span
 </dd></dl>
 
 <dl class="function">
-<dt>
-double <code class="descname">proj_lp_dist</code><span class="sig-paren">(</span>const <a class="reference internal" href="datatypes.html#c.PJ" title="PJ">PJ</a><em>&nbsp;*P</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;a</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;b</em><span class="sig-paren">)</span></dt>
-<dd><p>Calculate geodesic distance between two points in geodetic coordinates.</p>
+<dt id="c.proj_lpz_dist">
+double <code class="descname">proj_lpz_dist</code><span class="sig-paren">(</span>const <a class="reference internal" href="datatypes.html#c.PJ" title="PJ">PJ</a><em>&nbsp;*P</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;a</em>, <a class="reference internal" href="datatypes.html#c.PJ_COORD" title="PJ_COORD">PJ_COORD</a><em>&nbsp;b</em><span class="sig-paren">)</span><a class="headerlink" href="#c.proj_lpz_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate geodesic distance between two points in geodetic coordinates.
+Similar to <a class="reference internal" href="#c.proj_lp_dist" title="proj_lp_dist"><code class="xref c c-func docutils literal notranslate"><span class="pre">proj_lp_dist()</span></code></a> but also takes the height above the ellipsoid
+into account.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1151,7 +1154,7 @@ int <code class="descname">proj_angular_output</code><span class="sig-paren">(</
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 06 May 2018.
+      Last updated on 07 May 2018.
 
     </p>
   </div>
