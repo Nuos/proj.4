@@ -109,6 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#cppcheck-static-analyzer">cppcheck static analyzer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#clang-static-analyzer-csa">CLang Static Analyzer (CSA)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#typo-detection-and-fixes">Typo detection and fixes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#include-what-you-use-iwyu">Include What You Use (IWYU)</a></li>
 </ul>
 </li>
 </ul>
@@ -308,6 +309,20 @@ This will also help humans reading your code !</p>
 <div class="section" id="typo-detection-and-fixes">
 <h3>Typo detection and fixes<a class="headerlink" href="#typo-detection-and-fixes" title="Permalink to this headline">¶</a></h3>
 <p>Run <code class="docutils literal notranslate"><span class="pre">scripts/fix_typos.sh</span></code></p>
+</div>
+<div class="section" id="include-what-you-use-iwyu">
+<h3>Include What You Use (IWYU)<a class="headerlink" href="#include-what-you-use-iwyu" title="Permalink to this headline">¶</a></h3>
+<p>Managing C includes is a pain.  IWYU makes updating headers a bit
+easier.  IWYU scans the code for functions that are called and makes
+sure that the headers for all those functions are present and in
+sorted order.  However, you cannot blindly apply IWYU to PROJ.  It
+does not understand ifdefs, other platforms, or the order requirements
+of PROJ internal headers.  So the way to use it is to run it on a copy
+of the source and merge in only the changes that make sense.
+Additions of standard headers should always be safe to merge.  The
+rest require careful evaluation.  See the IWYU documentation for
+motivation and details.</p>
+<p><a class="reference external" href="https://github.com/include-what-you-use/include-what-you-use/tree/master/docs">IWYU docs</a></p>
 </div>
 </div>
 </div>
