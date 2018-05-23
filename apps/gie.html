@@ -371,19 +371,37 @@ units.</p>
 <dl class="option">
 <dt id="cmdoption-arg-roundtrip">
 <code class="descname">roundtrip</code><code class="descclassname"> &lt;n&gt; &lt;tolerance&gt;</code><a class="headerlink" href="#cmdoption-arg-roundtrip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do a roundtrip test of an operation. <a class="reference internal" href="#cmdoption-arg-roundtrip"><code class="xref std std-option docutils literal notranslate"><span class="pre">roundtrip</span></code></a> needs a
+<dd><blockquote>
+<div><p>Do a roundtrip test of an operation. <a class="reference internal" href="#cmdoption-arg-roundtrip"><code class="xref std std-option docutils literal notranslate"><span class="pre">roundtrip</span></code></a> needs a
 <a class="reference internal" href="#cmdoption-arg-operation"><code class="xref std std-option docutils literal notranslate"><span class="pre">operation</span></code></a> and a <a class="reference internal" href="#cmdoption-arg-accept"><code class="xref std std-option docutils literal notranslate"><span class="pre">accept</span></code></a> command
 to function. The accepted coordinate is passed to the operation first in
 it’s forward mode, then the output from the forward operation is passed
 back to the inverse operation. This procedure is done <code class="docutils literal notranslate"><span class="pre">n</span></code> times. If the
-resulting coordinate is within the set tolerance of the initial coordinate
+resulting coordinate is within the set tolerance of the initial coordinate,
 the test is passed.</p>
-<p>Example:</p>
+<p>Example with the default 100 iterations and the default tolerance:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation       proj=merc</span>
+<span class="go">accept          12 55</span>
+<span class="go">roundtrip</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example with count and default tolerance:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation       proj=merc</span>
+<span class="go">accept          12 55</span>
+<span class="go">roundtrip       10000</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example with count and tolerance:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">operation       proj=merc</span>
 <span class="go">accept          12 55</span>
 <span class="go">roundtrip       10000 5 mm</span>
 </pre></div>
 </div>
+</div></blockquote>
 </dd></dl>
 
 <dl class="option">
@@ -520,7 +538,7 @@ integrity of the PROJ system, in honour of Gerald.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 1983-2018.
-      Last updated on 22 May 2018.
+      Last updated on 23 May 2018.
 
     </p>
   </div>
