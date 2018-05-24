@@ -521,14 +521,14 @@ the ellipsoid as in the following example</p>
 It is also possible to add additional parameters not specified in the init file,
 for instance by adding an observation epoch when transforming from ITRF2000 to
 ITRF2005:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+init=ITRF2000:ITRF2005 +tobs=2010.5
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+init=ITRF2000:ITRF2005 +t_obs=2010.5
 </pre></div>
 </div>
 <p>which then expands to</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+proj=helmert +x=-0.0001 +y=0.0008 +z=0.0058 +s=-0.0004
 +dx=0.0002 +dy=-0.0001 +dz=0.0018 +ds=-0.000008
-+epoch=2000.0 +transpose
-+tobs=2010.5
++t_epoch=2000.0 +transpose
++t_obs=2010.5
 </pre></div>
 </div>
 <p>Below is a list of the init files that are packaged with PROJ.</p>
